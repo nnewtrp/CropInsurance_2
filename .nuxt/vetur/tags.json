@@ -1,74 +1,14 @@
 {
-  "CaseList": {
-    "description": "Auto imported from components/case/CaseList.vue"
+  "AllReportCard": {
+    "description": "Auto imported from components/AllReportCard.vue"
   },
-  "FormIForm": {
-    "description": "Auto imported from components/form/IForm.vue"
+  "WelcomeCard": {
+    "description": "Auto imported from components/WelcomeCard.vue"
   },
-  "FormRForm": {
-    "description": "Auto imported from components/form/RForm.vue"
+  "NavbarAvatarMenu": {
+    "description": "Auto imported from components/navbar/AvatarMenu.vue"
   },
-  "HomeRecentCase": {
-    "description": "Auto imported from components/home/RecentCase.vue"
-  },
-  "HomeSendButton": {
-    "description": "Auto imported from components/home/SendButton.vue"
-  },
-  "NavbarAvatarButton": {
-    "description": "Auto imported from components/navbar/AvatarButton.vue"
-  },
-  "NavbarCaseMenuButton": {
-    "description": "Auto imported from components/navbar/CaseMenuButton.vue"
-  },
-  "PasswordChangePassword": {
-    "description": "Auto imported from components/password/ChangePassword.vue"
-  },
-  "ProfileEditProfile": {
-    "description": "Auto imported from components/profile/EditProfile.vue"
-  },
-  "ProfileUserImage": {
-    "description": "Auto imported from components/profile/UserImage.vue"
-  },
-  "ProfileUserInfo": {
-    "description": "Auto imported from components/profile/UserInfo.vue"
-  },
-  "ProfileWorkplace": {
-    "description": "Auto imported from components/profile/Workplace.vue"
-  },
-  "SnackbarCancelSB": {
-    "description": "Auto imported from components/Snackbar/CancelSB.vue"
-  },
-  "SnackbarResetPassSB": {
-    "description": "Auto imported from components/Snackbar/ResetPassSB.vue"
-  },
-  "SnackbarSendSB": {
-    "description": "Auto imported from components/Snackbar/SendSB.vue"
-  },
-  "SnackbarSubmitSB": {
-    "description": "Auto imported from components/Snackbar/SubmitSB.vue"
-  },
-  "SnackbarUpdateProfileSB": {
-    "description": "Auto imported from components/Snackbar/UpdateProfileSB.vue"
-  },
-  "SnackbarValidateSB": {
-    "description": "Auto imported from components/Snackbar/ValidateSB.vue"
-  },
-  "CaseComment": {
-    "description": "Auto imported from components/case/detail/CaseComment.vue"
-  },
-  "CaseInfo": {
-    "description": "Auto imported from components/case/detail/CaseInfo.vue"
-  },
-  "CaseDetailCommentLog": {
-    "description": "Auto imported from components/case/detail/CommentLog.vue"
-  },
-  "CaseDetailIncidentDetail": {
-    "description": "Auto imported from components/case/detail/IncidentDetail.vue"
-  },
-  "CaseDetailReceiverInfo": {
-    "description": "Auto imported from components/case/detail/ReceiverInfo.vue"
-  },
-  "CaseDetailRequestDetail": {
-    "description": "Auto imported from components/case/detail/RequestDetail.vue"
+  "ReportList": {
+    "description": "Auto imported from components/Report/ReportList.vue"
   }
 }
