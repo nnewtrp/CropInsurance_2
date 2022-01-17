@@ -3,12 +3,12 @@ import { wrapFunctional } from './utils'
 
 const components = {
   CaseList: () => import('../..\\components\\case\\CaseList.vue' /* webpackChunkName: "components/case-list" */).then(c => wrapFunctional(c.default || c)),
+  FormIForm: () => import('../..\\components\\form\\IForm.vue' /* webpackChunkName: "components/form-i-form" */).then(c => wrapFunctional(c.default || c)),
+  FormRForm: () => import('../..\\components\\form\\RForm.vue' /* webpackChunkName: "components/form-r-form" */).then(c => wrapFunctional(c.default || c)),
   HomeRecentCase: () => import('../..\\components\\home\\RecentCase.vue' /* webpackChunkName: "components/home-recent-case" */).then(c => wrapFunctional(c.default || c)),
   HomeSendButton: () => import('../..\\components\\home\\SendButton.vue' /* webpackChunkName: "components/home-send-button" */).then(c => wrapFunctional(c.default || c)),
   NavbarAvatarButton: () => import('../..\\components\\navbar\\AvatarButton.vue' /* webpackChunkName: "components/navbar-avatar-button" */).then(c => wrapFunctional(c.default || c)),
   NavbarCaseMenuButton: () => import('../..\\components\\navbar\\CaseMenuButton.vue' /* webpackChunkName: "components/navbar-case-menu-button" */).then(c => wrapFunctional(c.default || c)),
-  FormIForm: () => import('../..\\components\\form\\IForm.vue' /* webpackChunkName: "components/form-i-form" */).then(c => wrapFunctional(c.default || c)),
-  FormRForm: () => import('../..\\components\\form\\RForm.vue' /* webpackChunkName: "components/form-r-form" */).then(c => wrapFunctional(c.default || c)),
   PasswordChangePassword: () => import('../..\\components\\password\\ChangePassword.vue' /* webpackChunkName: "components/password-change-password" */).then(c => wrapFunctional(c.default || c)),
   ProfileEditProfile: () => import('../..\\components\\profile\\EditProfile.vue' /* webpackChunkName: "components/profile-edit-profile" */).then(c => wrapFunctional(c.default || c)),
   ProfileUserImage: () => import('../..\\components\\profile\\UserImage.vue' /* webpackChunkName: "components/profile-user-image" */).then(c => wrapFunctional(c.default || c)),

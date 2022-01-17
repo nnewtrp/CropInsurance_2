@@ -2,6 +2,12 @@
   "CaseList": {
     "description": "Auto imported from components/case/CaseList.vue"
   },
+  "FormIForm": {
+    "description": "Auto imported from components/form/IForm.vue"
+  },
+  "FormRForm": {
+    "description": "Auto imported from components/form/RForm.vue"
+  },
   "HomeRecentCase": {
     "description": "Auto imported from components/home/RecentCase.vue"
   },
@@ -13,12 +19,6 @@
   },
   "NavbarCaseMenuButton": {
     "description": "Auto imported from components/navbar/CaseMenuButton.vue"
-  },
-  "FormIForm": {
-    "description": "Auto imported from components/form/IForm.vue"
-  },
-  "FormRForm": {
-    "description": "Auto imported from components/form/RForm.vue"
   },
   "PasswordChangePassword": {
     "description": "Auto imported from components/password/ChangePassword.vue"

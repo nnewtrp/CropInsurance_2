@@ -1,12 +1,12 @@
 import { wrapFunctional } from './utils'
 
 export { default as CaseList } from '../..\\components\\case\\CaseList.vue'
+export { default as FormIForm } from '../..\\components\\form\\IForm.vue'
+export { default as FormRForm } from '../..\\components\\form\\RForm.vue'
 export { default as HomeRecentCase } from '../..\\components\\home\\RecentCase.vue'
 export { default as HomeSendButton } from '../..\\components\\home\\SendButton.vue'
 export { default as NavbarAvatarButton } from '../..\\components\\navbar\\AvatarButton.vue'
 export { default as NavbarCaseMenuButton } from '../..\\components\\navbar\\CaseMenuButton.vue'
-export { default as FormIForm } from '../..\\components\\form\\IForm.vue'
-export { default as FormRForm } from '../..\\components\\form\\RForm.vue'
 export { default as PasswordChangePassword } from '../..\\components\\password\\ChangePassword.vue'
 export { default as ProfileEditProfile } from '../..\\components\\profile\\EditProfile.vue'
 export { default as ProfileUserImage } from '../..\\components\\profile\\UserImage.vue'
@@ -26,12 +26,12 @@ export { default as CaseDetailReceiverInfo } from '../..\\components\\case\\deta
 export { default as CaseDetailRequestDetail } from '../..\\components\\case\\detail\\RequestDetail.vue'
 
 export const LazyCaseList = import('../..\\components\\case\\CaseList.vue' /* webpackChunkName: "components/case-list" */).then(c => wrapFunctional(c.default || c))
+export const LazyFormIForm = import('../..\\components\\form\\IForm.vue' /* webpackChunkName: "components/form-i-form" */).then(c => wrapFunctional(c.default || c))
+export const LazyFormRForm = import('../..\\components\\form\\RForm.vue' /* webpackChunkName: "components/form-r-form" */).then(c => wrapFunctional(c.default || c))
 export const LazyHomeRecentCase = import('../..\\components\\home\\RecentCase.vue' /* webpackChunkName: "components/home-recent-case" */).then(c => wrapFunctional(c.default || c))
 export const LazyHomeSendButton = import('../..\\components\\home\\SendButton.vue' /* webpackChunkName: "components/home-send-button" */).then(c => wrapFunctional(c.default || c))
 export const LazyNavbarAvatarButton = import('../..\\components\\navbar\\AvatarButton.vue' /* webpackChunkName: "components/navbar-avatar-button" */).then(c => wrapFunctional(c.default || c))
 export const LazyNavbarCaseMenuButton = import('../..\\components\\navbar\\CaseMenuButton.vue' /* webpackChunkName: "components/navbar-case-menu-button" */).then(c => wrapFunctional(c.default || c))
-export const LazyFormIForm = import('../..\\components\\form\\IForm.vue' /* webpackChunkName: "components/form-i-form" */).then(c => wrapFunctional(c.default || c))
-export const LazyFormRForm = import('../..\\components\\form\\RForm.vue' /* webpackChunkName: "components/form-r-form" */).then(c => wrapFunctional(c.default || c))
 export const LazyPasswordChangePassword = import('../..\\components\\password\\ChangePassword.vue' /* webpackChunkName: "components/password-change-password" */).then(c => wrapFunctional(c.default || c))
 export const LazyProfileEditProfile = import('../..\\components\\profile\\EditProfile.vue' /* webpackChunkName: "components/profile-edit-profile" */).then(c => wrapFunctional(c.default || c))
 export const LazyProfileUserImage = import('../..\\components\\profile\\UserImage.vue' /* webpackChunkName: "components/profile-user-image" */).then(c => wrapFunctional(c.default || c))

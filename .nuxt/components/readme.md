@@ -7,12 +7,12 @@ You can directly use them in pages and other components without the need to impo
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
 - `<CaseList>` | `<case-list>` (components/case/CaseList.vue)
+- `<FormIForm>` | `<form-i-form>` (components/form/IForm.vue)
+- `<FormRForm>` | `<form-r-form>` (components/form/RForm.vue)
 - `<HomeRecentCase>` | `<home-recent-case>` (components/home/RecentCase.vue)
 - `<HomeSendButton>` | `<home-send-button>` (components/home/SendButton.vue)
 - `<NavbarAvatarButton>` | `<navbar-avatar-button>` (components/navbar/AvatarButton.vue)
 - `<NavbarCaseMenuButton>` | `<navbar-case-menu-button>` (components/navbar/CaseMenuButton.vue)
-- `<FormIForm>` | `<form-i-form>` (components/form/IForm.vue)
-- `<FormRForm>` | `<form-r-form>` (components/form/RForm.vue)
 - `<PasswordChangePassword>` | `<password-change-password>` (components/password/ChangePassword.vue)
 - `<ProfileEditProfile>` | `<profile-edit-profile>` (components/profile/EditProfile.vue)
 - `<ProfileUserImage>` | `<profile-user-image>` (components/profile/UserImage.vue)
