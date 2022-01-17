@@ -1,0 +1,58 @@
+[
+  {
+    "name": "case",
+    "path": "/case",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\Intern\\\\helpdesk-user\\\\pages\\\\case\\\\index.vue",
+    "chunkName": "pages/case/index",
+    "_name": "_6f4eb74b"
+  },
+  {
+    "name": "password",
+    "path": "/password",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\Intern\\\\helpdesk-user\\\\pages\\\\password\\\\index.vue",
+    "chunkName": "pages/password/index",
+    "_name": "_fb55f300"
+  },
+  {
+    "name": "profile",
+    "path": "/profile",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\Intern\\\\helpdesk-user\\\\pages\\\\profile\\\\index.vue",
+    "chunkName": "pages/profile/index",
+    "_name": "_ce876b20"
+  },
+  {
+    "name": "form-IncidentForm",
+    "path": "/form/IncidentForm",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\Intern\\\\helpdesk-user\\\\pages\\\\form\\\\IncidentForm.vue",
+    "chunkName": "pages/form/IncidentForm",
+    "_name": "_f9202dfe"
+  },
+  {
+    "name": "form-RequestForm",
+    "path": "/form/RequestForm",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\Intern\\\\helpdesk-user\\\\pages\\\\form\\\\RequestForm.vue",
+    "chunkName": "pages/form/RequestForm",
+    "_name": "_75f4bdf8"
+  },
+  {
+    "name": "profile-editprofile",
+    "path": "/profile/editprofile",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\Intern\\\\helpdesk-user\\\\pages\\\\profile\\\\editprofile.vue",
+    "chunkName": "pages/profile/editprofile",
+    "_name": "_594d12fd"
+  },
+  {
+    "name": "case-detail",
+    "path": "/case/:detail",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\Intern\\\\helpdesk-user\\\\pages\\\\case\\\\_detail.vue",
+    "chunkName": "pages/case/_detail",
+    "_name": "_6f0f1eae"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\Intern\\\\helpdesk-user\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_cbea268a"
+  }
+]
