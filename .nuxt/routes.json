@@ -14,6 +14,13 @@
     "_name": "_13576eb5"
   },
   {
+    "name": "Profile",
+    "path": "/Profile",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Profile\\\\index.vue",
+    "chunkName": "pages/Profile/index",
+    "_name": "_7269b79c"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\index.vue",

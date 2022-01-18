@@ -34,8 +34,8 @@ export default {
   data() {
     return {
       menus: [
-        { title: 'Profile', to: '/profile', icon: 'fa-user' },
-        { title: 'Change Password', to: '/password', icon: 'fa-lock' },
+        { title: 'Profile', to: '/Profile', icon: 'fa-user' },
+        { title: 'Change Password', to: 'Profile/password', icon: 'fa-lock' },
         { title: 'Logout', to: '', icon: 'fa-sign-out-alt' },
       ],
       // User
