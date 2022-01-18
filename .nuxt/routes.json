@@ -3,18 +3,22 @@
     "name": "AllReport",
     "path": "/AllReport",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\AllReport\\\\index.vue",
-    "chunkName": "pages/AllReport/index"
+    "chunkName": "pages/AllReport/index",
+    "_name": "_382bffe6"
   },
   {
     "name": "Form",
     "path": "/Form",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Form\\\\index.vue",
     "chunkName": "pages/Form/index"
+    "chunkName": "pages/Form/index",
+    "_name": "_13576eb5"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_f058de4e"
   }
 ]
