@@ -5,11 +5,11 @@
   "WelcomeCard": {
     "description": "Auto imported from components/WelcomeCard.vue"
   },
-  "FormReportForm": {
-    "description": "Auto imported from components/Form/ReportForm.vue"
-  },
   "NavbarAvatarMenu": {
     "description": "Auto imported from components/navbar/AvatarMenu.vue"
+  },
+  "FormReportForm": {
+    "description": "Auto imported from components/Form/ReportForm.vue"
   },
   "ReportList": {
     "description": "Auto imported from components/Report/ReportList.vue"
