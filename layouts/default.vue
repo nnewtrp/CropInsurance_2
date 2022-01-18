@@ -32,7 +32,7 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <v-footer app class="primary">
+    <v-footer class="primary">
       <span style="color: white">
         Crop Insurance System &copy; {{ new Date().getFullYear() }}
       </span>
