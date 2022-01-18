@@ -28,6 +28,16 @@
           label="File (Optional)"
           prepend-icon="fa-paperclip"
         ></v-file-input>
+        <div id="map-wrap" style="height: 100vh">
+          <client-only>
+            <l-map :zoom="13" :center="[55.9464418, 8.1277591]">
+              <l-tile-layer
+                url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+              ></l-tile-layer>
+              <l-marker :lat-lng="[55.9464418, 8.1277591]"></l-marker>
+            </l-map>
+          </client-only>
+        </div>
       </v-card-text>
       <v-card-actions v-if="isDisabled == false" class="justify-center">
         <v-btn :disabled="!valid" color="success" @click="submit">
