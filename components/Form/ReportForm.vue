@@ -28,7 +28,7 @@
           label="File (Optional)"
           prepend-icon="fa-paperclip"
         ></v-file-input>
-        <div id="map-wrap" style="height: 100vh">
+        <div id="map-wrap" style="height: 50vh">
           <client-only>
             <l-map :zoom="13" :center="[55.9464418, 8.1277591]">
               <l-tile-layer
