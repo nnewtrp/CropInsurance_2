@@ -1,10 +1,12 @@
 <template>
   <v-card class="pa-3">
     <v-card-title v-if="isDisabled == false" class="text-h4 justify-left">
-      <div class="text-decoration-underline">New Report</div>
+      <div class="text-decoration-underline font-weight-bold">New Report</div>
     </v-card-title>
     <v-card-title v-if="isDisabled == true" class="text-h4 justify-left">
-      <div class="text-decoration-underline">Submit Report</div>
+      <div class="text-decoration-underline font-weight-bold">
+        Submit Report
+      </div>
     </v-card-title>
     <v-form ref="form" v-model="valid" :disabled="isDisabled" lazy-validation>
       <v-card-text class="subheading">
