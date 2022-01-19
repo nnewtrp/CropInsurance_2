@@ -21,6 +21,13 @@
     "_name": "_7269b79c"
   },
   {
+    "name": "Profile-password",
+    "path": "/Profile/password",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Profile\\\\password.vue",
+    "chunkName": "pages/Profile/password",
+    "_name": "_3a661e2a"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\index.vue",

@@ -7,6 +7,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _382bffe6 = () => interopDefault(import('..\\pages\\AllReport\\index.vue' /* webpackChunkName: "pages/AllReport/index" */))
 const _13576eb5 = () => interopDefault(import('..\\pages\\Form\\index.vue' /* webpackChunkName: "pages/Form/index" */))
 const _7269b79c = () => interopDefault(import('..\\pages\\Profile\\index.vue' /* webpackChunkName: "pages/Profile/index" */))
+const _3a661e2a = () => interopDefault(import('..\\pages\\Profile\\password.vue' /* webpackChunkName: "pages/Profile/password" */))
 const _f058de4e = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -32,6 +33,10 @@ export const routerOptions = {
     path: "/Profile",
     component: _7269b79c,
     name: "Profile"
+  }, {
+    path: "/Profile/password",
+    component: _3a661e2a,
+    name: "Profile-password"
   }, {
     path: "/",
     component: _f058de4e,

@@ -5,7 +5,7 @@
       cols="12"
       md="2"
       class="my-16 mr-2 text-h5 font-weight-bold d-none d-md-block"
-      to="/"
+      @click="$router.push({ name: 'index' })"
     >
       <v-icon left>fa-arrow-circle-left</v-icon>
       Home

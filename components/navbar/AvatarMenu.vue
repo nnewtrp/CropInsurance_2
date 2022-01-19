@@ -17,7 +17,12 @@
             <p class="text-caption mt-1">{{ email }}</p>
             <div v-for="item in menus" :key="item.title">
               <v-divider class="my-3"></v-divider>
-              <v-btn depressed rounded text :to="item.to">
+              <v-btn
+                depressed
+                rounded
+                text
+                @click="$router.push({ name: item.to })"
+              >
                 {{ item.title }}
                 <v-icon right>{{ item.icon }}</v-icon>
               </v-btn>
@@ -34,8 +39,8 @@ export default {
   data() {
     return {
       menus: [
-        { title: 'Profile', to: '/Profile', icon: 'fa-user' },
-        { title: 'Change Password', to: 'Profile/password', icon: 'fa-lock' },
+        { title: 'Profile', to: 'Profile', icon: 'fa-user' },
+        { title: 'Change Password', to: 'Profile-password', icon: 'fa-lock' },
         { title: 'Logout', to: '', icon: 'fa-sign-out-alt' },
       ],
       // User
