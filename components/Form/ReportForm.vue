@@ -13,6 +13,7 @@
         <v-text-field
           v-model="name"
           label="Full Name *"
+          outlined
           :rules="[rules.required]"
           readonly
           required
@@ -20,6 +21,7 @@
         <v-textarea
           v-model="detail"
           label="Report Detail *"
+          outlined
           :rules="[rules.required]"
           required
         ></v-textarea>
@@ -27,16 +29,19 @@
           v-model="file"
           chips
           multiple
+          outlined
           label="Import Image/File (Optional)"
           prepend-icon="fa-paperclip"
         ></v-file-input>
         <div id="map-wrap" style="height: 50vh">
           <client-only>
-            <l-map :zoom="13" :center="[55.9464418, 8.1277591]">
+            <l-map :zoom="13" :center="center" @update:center="centerUpdate">
               <l-tile-layer
                 url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
               ></l-tile-layer>
-              <l-marker :lat-lng="[55.9464418, 8.1277591]"></l-marker>
+              <l-marker :lat-lng="currentCenter">
+                <l-popup> Marker at {{ currentCenter }}</l-popup>
+              </l-marker>
             </l-map>
           </client-only>
         </div>
@@ -74,6 +79,9 @@ export default {
       rules: {
         required: (value) => !!value || 'This field is required.',
       },
+      // Map
+      center: [14.069556, 100.607857],
+      currentCenter: [14.069556, 100.607857],
     }
   },
   methods: {
@@ -89,6 +97,10 @@ export default {
       this.$router.push({
         name: 'index',
       })
+    },
+    // Map
+    centerUpdate(center) {
+      this.currentCenter = center
     },
   },
 }
