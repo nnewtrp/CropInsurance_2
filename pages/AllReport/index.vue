@@ -23,5 +23,10 @@ export default {
   components: {
     ReportList,
   },
+  head() {
+    return {
+      title: 'All Report',
+    }
+  },
 }
 </script>

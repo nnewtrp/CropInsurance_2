@@ -23,5 +23,10 @@ export default {
   components: {
     UserProfile,
   },
+  head() {
+    return {
+      title: 'Profile',
+    }
+  },
 }
 </script>

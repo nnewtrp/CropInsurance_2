@@ -18,8 +18,8 @@
           required
         ></v-text-field>
         <v-textarea
-          v-model="description"
-          label="Description *"
+          v-model="detail"
+          label="Report Detail *"
           :rules="[rules.required]"
           required
         ></v-textarea>
@@ -27,7 +27,7 @@
           v-model="file"
           chips
           multiple
-          label="File (Optional)"
+          label="Import Image/File (Optional)"
           prepend-icon="fa-paperclip"
         ></v-file-input>
         <div id="map-wrap" style="height: 50vh">
@@ -66,7 +66,7 @@ export default {
     return {
       // Data
       name: 'Teerapat Satitporn',
-      description: '',
+      detail: '',
       file: null,
       // Command
       valid: true,

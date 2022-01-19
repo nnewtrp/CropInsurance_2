@@ -23,5 +23,10 @@ export default {
   components: {
     ChangePassword,
   },
+  head() {
+    return {
+      title: 'Change Password',
+    }
+  },
 }
 </script>

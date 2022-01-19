@@ -23,5 +23,10 @@ export default {
   components: {
     ReportForm,
   },
+  head() {
+    return {
+      title: 'New Report',
+    }
+  },
 }
 </script>

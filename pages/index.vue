@@ -18,5 +18,10 @@ export default {
     WelcomeCard,
     AllReportCard,
   },
+  head() {
+    return {
+      title: 'Home',
+    }
+  },
 }
 </script>
