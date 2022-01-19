@@ -33,6 +33,7 @@
           label="Import Image/File (Optional)"
           prepend-icon="fa-paperclip"
         ></v-file-input>
+        <h2 class="pb-2">Location</h2>
         <div id="map-wrap" style="height: 50vh">
           <client-only>
             <l-map :zoom="13" :center="center" @update:center="centerUpdate">
@@ -100,7 +101,9 @@ export default {
     },
     // Map
     centerUpdate(center) {
-      this.currentCenter = center
+      if (this.isDisabled === false) {
+        this.currentCenter = center
+      }
     },
   },
 }
