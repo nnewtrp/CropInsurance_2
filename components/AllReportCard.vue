@@ -36,7 +36,7 @@
         outlined
         color="white"
         class="mx-5 mt-2 mb-4"
-        to="/AllReport"
+        @click="$router.push({ name: 'Report' })"
       >
         See All Reports
         <v-icon color="white" right>fa-arrow-right</v-icon>

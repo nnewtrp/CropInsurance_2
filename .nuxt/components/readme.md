@@ -12,4 +12,5 @@ You can directly use them in pages and other components without the need to impo
 - `<FormReportForm>` | `<form-report-form>` (components/Form/ReportForm.vue)
 - `<ProfileChangePassword>` | `<profile-change-password>` (components/Profile/ChangePassword.vue)
 - `<ProfileUserProfile>` | `<profile-user-profile>` (components/Profile/UserProfile.vue)
+- `<ReportDetail>` | `<report-detail>` (components/Report/ReportDetail.vue)
 - `<ReportList>` | `<report-list>` (components/Report/ReportList.vue)

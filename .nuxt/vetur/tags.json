@@ -17,6 +17,9 @@
   "ProfileUserProfile": {
     "description": "Auto imported from components/Profile/UserProfile.vue"
   },
+  "ReportDetail": {
+    "description": "Auto imported from components/Report/ReportDetail.vue"
+  },
   "ReportList": {
     "description": "Auto imported from components/Report/ReportList.vue"
   }

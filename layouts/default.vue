@@ -18,7 +18,7 @@
         text
         color="white"
         class="mr-1 hidden-xs-only"
-        to="/AllReport"
+        to="/Report"
         depressed
         rounded
       >

@@ -146,7 +146,7 @@ export default {
     // Change
     ClickDetail(ReportID) {
       this.$router.push({
-        name: 'report-detail',
+        name: 'Report-detail',
         params: {
           detail: ReportID,
         },

@@ -4,10 +4,11 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _382bffe6 = () => interopDefault(import('..\\pages\\AllReport\\index.vue' /* webpackChunkName: "pages/AllReport/index" */))
 const _13576eb5 = () => interopDefault(import('..\\pages\\Form\\index.vue' /* webpackChunkName: "pages/Form/index" */))
 const _7269b79c = () => interopDefault(import('..\\pages\\Profile\\index.vue' /* webpackChunkName: "pages/Profile/index" */))
+const _32860ef6 = () => interopDefault(import('..\\pages\\Report\\index.vue' /* webpackChunkName: "pages/Report/index" */))
 const _3a661e2a = () => interopDefault(import('..\\pages\\Profile\\password.vue' /* webpackChunkName: "pages/Profile/password" */))
+const _1d5b4b63 = () => interopDefault(import('..\\pages\\Report\\_detail.vue' /* webpackChunkName: "pages/Report/_detail" */))
 const _f058de4e = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -22,10 +23,6 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/AllReport",
-    component: _382bffe6,
-    name: "AllReport"
-  }, {
     path: "/Form",
     component: _13576eb5,
     name: "Form"
@@ -34,9 +31,17 @@ export const routerOptions = {
     component: _7269b79c,
     name: "Profile"
   }, {
+    path: "/Report",
+    component: _32860ef6,
+    name: "Report"
+  }, {
     path: "/Profile/password",
     component: _3a661e2a,
     name: "Profile-password"
+  }, {
+    path: "/Report/:detail",
+    component: _1d5b4b63,
+    name: "Report-detail"
   }, {
     path: "/",
     component: _f058de4e,
