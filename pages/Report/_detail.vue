@@ -11,21 +11,21 @@
       Home
     </v-btn>
     <v-col cols="12" sm="12" md="10" class="my-8">
-      <ReportList />
+      <ReportDetail />
     </v-col>
   </v-layout>
 </template>
 
 <script>
-import ReportList from '~/components/Report/ReportList.vue'
+import ReportDetail from '~/components/Report/ReportDetail.vue'
 
 export default {
   components: {
-    ReportList,
+    ReportDetail,
   },
   head() {
     return {
-      title: 'All Report',
+      title: 'Report ' + this.$route.params.detail,
     }
   },
 }
