@@ -8,9 +8,9 @@ You can directly use them in pages and other components without the need to impo
 
 - `<AllReportCard>` | `<all-report-card>` (components/AllReportCard.vue)
 - `<WelcomeCard>` | `<welcome-card>` (components/WelcomeCard.vue)
-- `<NavbarAvatarMenu>` | `<navbar-avatar-menu>` (components/navbar/AvatarMenu.vue)
 - `<FormReportForm>` | `<form-report-form>` (components/Form/ReportForm.vue)
 - `<ProfileChangePassword>` | `<profile-change-password>` (components/Profile/ChangePassword.vue)
 - `<ProfileUserProfile>` | `<profile-user-profile>` (components/Profile/UserProfile.vue)
+- `<NavbarAvatarMenu>` | `<navbar-avatar-menu>` (components/navbar/AvatarMenu.vue)
 - `<ReportDetail>` | `<report-detail>` (components/Report/ReportDetail.vue)
 - `<ReportList>` | `<report-list>` (components/Report/ReportList.vue)
