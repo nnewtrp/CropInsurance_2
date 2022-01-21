@@ -1,7 +1,9 @@
 <template>
   <v-card>
     <v-card-title class="justify-left">
-      <div class="text-h4 pl-2 font-weight-bold">Your Reports</div>
+      <div class="text-h4 pl-2 font-weight-bold text-decoration-underline">
+        Your Reports
+      </div>
     </v-card-title>
     <v-card-text>
       <v-row wrap>

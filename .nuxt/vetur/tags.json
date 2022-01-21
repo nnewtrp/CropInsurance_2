@@ -8,14 +8,17 @@
   "FormReportForm": {
     "description": "Auto imported from components/Form/ReportForm.vue"
   },
+  "NavbarAvatarMenu": {
+    "description": "Auto imported from components/navbar/AvatarMenu.vue"
+  },
   "ProfileChangePassword": {
     "description": "Auto imported from components/Profile/ChangePassword.vue"
   },
+  "ProfileEditProfileInfo": {
+    "description": "Auto imported from components/Profile/EditProfileInfo.vue"
+  },
   "ProfileUserProfile": {
     "description": "Auto imported from components/Profile/UserProfile.vue"
-  },
-  "NavbarAvatarMenu": {
-    "description": "Auto imported from components/navbar/AvatarMenu.vue"
   },
   "ReportDetail": {
     "description": "Auto imported from components/Report/ReportDetail.vue"

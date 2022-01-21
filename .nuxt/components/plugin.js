@@ -5,9 +5,10 @@ const components = {
   AllReportCard: () => import('../..\\components\\AllReportCard.vue' /* webpackChunkName: "components/all-report-card" */).then(c => wrapFunctional(c.default || c)),
   WelcomeCard: () => import('../..\\components\\WelcomeCard.vue' /* webpackChunkName: "components/welcome-card" */).then(c => wrapFunctional(c.default || c)),
   FormReportForm: () => import('../..\\components\\Form\\ReportForm.vue' /* webpackChunkName: "components/form-report-form" */).then(c => wrapFunctional(c.default || c)),
-  ProfileChangePassword: () => import('../..\\components\\Profile\\ChangePassword.vue' /* webpackChunkName: "components/profile-change-password" */).then(c => wrapFunctional(c.default || c)),
-  ProfileUserProfile: () => import('../..\\components\\Profile\\UserProfile.vue' /* webpackChunkName: "components/profile-user-profile" */).then(c => wrapFunctional(c.default || c)),
   NavbarAvatarMenu: () => import('../..\\components\\navbar\\AvatarMenu.vue' /* webpackChunkName: "components/navbar-avatar-menu" */).then(c => wrapFunctional(c.default || c)),
+  ProfileChangePassword: () => import('../..\\components\\Profile\\ChangePassword.vue' /* webpackChunkName: "components/profile-change-password" */).then(c => wrapFunctional(c.default || c)),
+  ProfileEditProfileInfo: () => import('../..\\components\\Profile\\EditProfileInfo.vue' /* webpackChunkName: "components/profile-edit-profile-info" */).then(c => wrapFunctional(c.default || c)),
+  ProfileUserProfile: () => import('../..\\components\\Profile\\UserProfile.vue' /* webpackChunkName: "components/profile-user-profile" */).then(c => wrapFunctional(c.default || c)),
   ReportDetail: () => import('../..\\components\\Report\\ReportDetail.vue' /* webpackChunkName: "components/report-detail" */).then(c => wrapFunctional(c.default || c)),
   ReportList: () => import('../..\\components\\Report\\ReportList.vue' /* webpackChunkName: "components/report-list" */).then(c => wrapFunctional(c.default || c))
 }

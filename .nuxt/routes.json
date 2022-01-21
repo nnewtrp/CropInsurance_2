@@ -21,6 +21,13 @@
     "_name": "_32860ef6"
   },
   {
+    "name": "Profile-editProfile",
+    "path": "/Profile/editProfile",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Profile\\\\editProfile.vue",
+    "chunkName": "pages/Profile/editProfile",
+    "_name": "_321089c2"
+  },
+  {
     "name": "Profile-password",
     "path": "/Profile/password",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Profile\\\\password.vue",

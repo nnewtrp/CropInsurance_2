@@ -24,10 +24,27 @@
             <strong>Address:</strong> &ensp;{{ address }}
           </div>
         </v-card-text>
+        <v-card-title class="headline">
+          <v-icon color="black">fa-address-card</v-icon>
+          &ensp;Contact
+        </v-card-title>
+        <v-card-text class="subheading">
+          <div class="text--primary pb-4">
+            <v-icon>fa-envelope</v-icon>
+            &nbsp;<strong>Email:</strong> &ensp;{{ email }}
+          </div>
+          <div class="text--primary pb-4">
+            <v-icon>fa-phone</v-icon>
+            &nbsp;<strong>Phone No:</strong> &ensp;{{ phone }}
+          </div>
+        </v-card-text>
       </v-col>
     </v-layout>
     <v-card-actions class="justify-center">
-      <v-btn color="error" nuxt to="/profile/editprofile">
+      <v-btn
+        color="error"
+        @click="$router.push({ name: 'Profile-editProfile' })"
+      >
         Edit Profile
         <v-icon right>fa-user-edit</v-icon>
       </v-btn>
@@ -43,6 +60,8 @@ export default {
       firstname: 'Teerapat',
       lastname: 'Satitporn',
       address: 'Khlong Luang District, Pathumtani',
+      email: 'example@gmail.com',
+      phone: '0802534473',
     }
   },
 }
