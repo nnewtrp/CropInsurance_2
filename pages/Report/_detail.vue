@@ -1,16 +1,16 @@
 <template>
   <v-layout row>
     <v-btn
-      text
+      icon
+      color="black"
       cols="12"
-      md="2"
-      class="my-16 mr-2 text-h5 font-weight-bold d-none d-md-block"
-      @click="$router.push({ name: 'index' })"
+      md="1"
+      class="my-16 mr-2 d-none d-md-block"
+      @click="$router.push({ name: 'Report' })"
     >
-      <v-icon left>fa-arrow-circle-left</v-icon>
-      Home
+      <v-icon>fa-arrow-circle-left</v-icon>
     </v-btn>
-    <v-col cols="12" sm="12" md="10" class="my-8">
+    <v-col cols="12" sm="12" md="11" class="my-8">
       <ReportDetail />
     </v-col>
   </v-layout>
