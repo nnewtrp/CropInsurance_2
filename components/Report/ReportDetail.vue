@@ -22,13 +22,25 @@
           <b>Detail:</b> &ensp;{{ item.detail }}
         </div>
         <div class="text--primary pb-4" style="font-size: 16px">
+          <b>Image:</b> &ensp;{{ item.detail }}
+        </div>
+        <div class="text--primary pb-4" style="font-size: 16px">
           <b>Address:</b> &ensp;{{ item.detail }}
         </div>
         <div class="text--primary pb-4" style="font-size: 16px">
           <b>Location:</b> &ensp;{{ item.detail }}
         </div>
-        <div class="text--primary pb-4" style="font-size: 16px">
-          <b>Image:</b> &ensp;{{ item.detail }}
+        <div id="map-wrap" style="height: 50vh">
+          <client-only>
+            <l-map :zoom="18" :center="item.location">
+              <l-tile-layer
+                url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+              ></l-tile-layer>
+              <l-marker :lat-lng="item.location">
+                <l-popup> Marker at {{ item.location }}</l-popup>
+              </l-marker>
+            </l-map>
+          </client-only>
         </div>
       </v-card-text>
     </div>
@@ -46,6 +58,7 @@ export default {
           date: '12-01-2022',
           status: 'In Progress',
           detail: '',
+          location: [14.069556, 100.607857],
         },
         {
           id: 2,
@@ -53,6 +66,7 @@ export default {
           date: '13-01-2022',
           status: 'In Progress',
           detail: '',
+          location: [14.069556, 100.607857],
         },
         {
           id: 3,
@@ -60,6 +74,7 @@ export default {
           date: '14-01-2022',
           status: 'New Case',
           detail: '',
+          location: [14.069556, 100.607857],
         },
         {
           id: 4,
@@ -67,6 +82,7 @@ export default {
           date: '14-01-2022',
           status: 'New Case',
           detail: '',
+          location: [14.069556, 100.607857],
         },
       ],
     }
