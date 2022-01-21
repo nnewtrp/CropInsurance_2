@@ -18,6 +18,13 @@
           readonly
           required
         ></v-text-field>
+        <v-text-field
+          v-model="title"
+          label="Title *"
+          outlined
+          :rules="[rules.required]"
+          required
+        ></v-text-field>
         <v-textarea
           v-model="detail"
           label="Report Detail *"
@@ -72,6 +79,7 @@ export default {
     return {
       // Data
       name: 'Teerapat Satitporn',
+      title: '',
       detail: '',
       file: null,
       // Command
@@ -91,7 +99,7 @@ export default {
         this.isDisabled = true
         this.$vuetify.goTo(10, 1000)
       } else {
-        this.$vuetify.goTo(400, 1000)
+        this.$vuetify.goTo(100, 1000)
       }
     },
     send() {
