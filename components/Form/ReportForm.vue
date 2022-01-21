@@ -53,6 +53,13 @@
             </l-map>
           </client-only>
         </div>
+        <v-card-actions v-if="isDisabled == false">
+          <v-spacer />
+          <v-btn color="error" @click="isDisabled = false">
+            Edit Location
+            <v-icon right>fa-pencil-alt</v-icon>
+          </v-btn>
+        </v-card-actions>
       </v-card-text>
       <v-card-actions v-if="isDisabled == false" class="justify-center">
         <v-btn :disabled="!valid" color="success" @click="submit">
