@@ -53,11 +53,18 @@
             </l-map>
           </client-only>
         </div>
-        <v-card-actions v-if="isDisabled == false">
+        <v-card-actions v-if="isEdit == false">
           <v-spacer />
-          <v-btn color="error" @click="isDisabled = false">
+          <v-btn color="error" :disabled="isDisabled" @click="isEdit = true">
             Edit Location
             <v-icon right>fa-pencil-alt</v-icon>
+          </v-btn>
+        </v-card-actions>
+        <v-card-actions v-else>
+          <v-spacer />
+          <v-btn color="success" :disabled="isDisabled" @click="isEdit = false">
+            Save Location
+            <v-icon right>fa-save</v-icon>
           </v-btn>
         </v-card-actions>
       </v-card-text>
@@ -96,6 +103,7 @@ export default {
         required: (value) => !!value || 'This field is required.',
       },
       // Map
+      isEdit: false,
       center: [14.069556, 100.607857],
       currentCenter: [14.069556, 100.607857],
     }
@@ -105,6 +113,7 @@ export default {
       if (this.$refs.form.validate()) {
         this.isDisabled = true
         this.$vuetify.goTo(10, 1000)
+        this.isEdit = false
       } else {
         this.$vuetify.goTo(100, 1000)
       }
@@ -116,7 +125,7 @@ export default {
     },
     // Map
     centerUpdate(center) {
-      if (this.isDisabled === false) {
+      if (this.isEdit === true) {
         this.currentCenter = center
       }
     },

@@ -5,9 +5,6 @@
   "WelcomeCard": {
     "description": "Auto imported from components/WelcomeCard.vue"
   },
-  "FormReportForm": {
-    "description": "Auto imported from components/Form/ReportForm.vue"
-  },
   "NavbarAvatarMenu": {
     "description": "Auto imported from components/navbar/AvatarMenu.vue"
   },
@@ -19,6 +16,9 @@
   },
   "ProfileUserProfile": {
     "description": "Auto imported from components/Profile/UserProfile.vue"
+  },
+  "FormReportForm": {
+    "description": "Auto imported from components/Form/ReportForm.vue"
   },
   "ReportDetail": {
     "description": "Auto imported from components/Report/ReportDetail.vue"
