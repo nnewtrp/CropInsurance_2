@@ -10,18 +10,23 @@
     >
       <v-icon>fa-arrow-circle-left</v-icon>
     </v-btn>
-    <v-col cols="12" sm="12" md="11" class="my-8">
+    <v-col cols="12" sm="12" md="7" class="my-8">
       <ReportDetail />
+    </v-col>
+    <v-col cols="12" sm="12" md="4" class="my-8">
+      <ReportResult />
     </v-col>
   </v-layout>
 </template>
 
 <script>
 import ReportDetail from '~/components/Report/ReportDetail.vue'
+import ReportResult from '~/components/Report/ReportResult.vue'
 
 export default {
   components: {
     ReportDetail,
+    ReportResult,
   },
   head() {
     return {

@@ -92,7 +92,7 @@ export default {
           id: 1,
           title: 'Flood',
           date: '12-01-2022',
-          status: 'In Progress',
+          status: 'Complete',
         },
         {
           id: 2,

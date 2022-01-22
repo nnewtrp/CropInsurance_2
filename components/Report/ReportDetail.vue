@@ -9,15 +9,6 @@
         <div class="text--primary pb-4" style="font-size: 16px">
           <b>Submit Date:</b> &ensp;{{ item.date }}
         </div>
-        <div
-          class="text--primary pb-4 font-weight-bold"
-          style="font-size: 16px"
-        >
-          Status: &ensp;
-          <v-chip :color="getSColor(item.status)">
-            {{ item.status }}
-          </v-chip>
-        </div>
         <div class="text--primary pb-4" style="font-size: 16px">
           <b>Detail:</b> &ensp;{{ item.detail }}
         </div>
@@ -56,7 +47,6 @@ export default {
           id: 1,
           title: 'Flood',
           date: '12-01-2022',
-          status: 'In Progress',
           detail: '',
           location: [14.069556, 100.607857],
         },
@@ -64,7 +54,6 @@ export default {
           id: 2,
           title: 'Flood',
           date: '13-01-2022',
-          status: 'In Progress',
           detail: '',
           location: [14.069556, 100.607857],
         },
@@ -72,7 +61,6 @@ export default {
           id: 3,
           title: 'Flood',
           date: '14-01-2022',
-          status: 'New Case',
           detail: '',
           location: [14.069556, 100.607857],
         },
@@ -80,20 +68,11 @@ export default {
           id: 4,
           title: 'Flood',
           date: '14-01-2022',
-          status: 'New Case',
           detail: '',
           location: [14.069556, 100.607857],
         },
       ],
     }
-  },
-  methods: {
-    getSColor(status) {
-      if (status === 'New Case') return 'info'
-      else if (status === 'In Progress') return 'warning'
-      else if (status === 'Complete') return 'success'
-      else if (status === 'Cancel') return 'error'
-    },
   },
 }
 </script>
