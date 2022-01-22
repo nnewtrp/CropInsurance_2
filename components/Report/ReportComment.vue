@@ -101,7 +101,7 @@ export default {
       comments: [
         {
           cid: '1',
-          id: '20',
+          id: '1',
           user: 'User',
           date: '5-07-2021',
           firstname: 'Teerapat',
@@ -112,7 +112,7 @@ export default {
         },
         {
           cid: '2',
-          id: '13',
+          id: '2',
           user: 'Staff',
           date: '8-07-2021',
           firstname: 'Teerapat',
@@ -123,7 +123,7 @@ export default {
         },
         {
           cid: '3',
-          id: '20',
+          id: '1',
           user: 'User',
           date: '9-07-2021',
           firstname: 'Teerapat',
@@ -134,7 +134,7 @@ export default {
         },
         {
           cid: '4',
-          id: '15',
+          id: '3',
           user: 'Staff',
           date: '12-07-2021',
           firstname: 'Teerapat',
@@ -145,7 +145,7 @@ export default {
         },
         {
           cid: '5',
-          id: '18',
+          id: '4',
           user: 'Staff',
           date: '10-07-2021',
           firstname: 'Teerapat',
@@ -156,7 +156,7 @@ export default {
         },
         {
           cid: '6',
-          id: '13',
+          id: '2',
           user: 'Staff',
           date: '8-07-2021',
           firstname: 'Teerapat',
@@ -192,7 +192,7 @@ export default {
     },
     avatarColor(user) {
       if (user === 'User') return 'accent'
-      else if (user === 'Staff') return 'secondary'
+      else if (user === 'Staff') return 'primary'
     },
     countComment() {
       let count = 0

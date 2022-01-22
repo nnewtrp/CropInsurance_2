@@ -8,6 +8,9 @@
   "FormReportForm": {
     "description": "Auto imported from components/Form/ReportForm.vue"
   },
+  "NavbarAvatarMenu": {
+    "description": "Auto imported from components/navbar/AvatarMenu.vue"
+  },
   "ProfileChangePassword": {
     "description": "Auto imported from components/Profile/ChangePassword.vue"
   },
@@ -16,9 +19,6 @@
   },
   "ProfileUserProfile": {
     "description": "Auto imported from components/Profile/UserProfile.vue"
-  },
-  "NavbarAvatarMenu": {
-    "description": "Auto imported from components/navbar/AvatarMenu.vue"
   },
   "ReportComment": {
     "description": "Auto imported from components/Report/ReportComment.vue"
