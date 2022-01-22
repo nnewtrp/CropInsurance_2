@@ -15,6 +15,7 @@
     </v-col>
     <v-col cols="12" sm="12" md="4" class="my-8">
       <ReportResult />
+      <ReportComment />
     </v-col>
   </v-layout>
 </template>
@@ -22,11 +23,13 @@
 <script>
 import ReportDetail from '~/components/Report/ReportDetail.vue'
 import ReportResult from '~/components/Report/ReportResult.vue'
+import ReportComment from '~/components/Report/ReportComment.vue'
 
 export default {
   components: {
     ReportDetail,
     ReportResult,
+    ReportComment,
   },
   head() {
     return {
