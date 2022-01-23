@@ -2,32 +2,33 @@
   <v-card class="pa-3 mt-2">
     <v-card-title class="headline">
       <v-icon color="black">fa-comment-dots</v-icon>
-      &ensp;Comments ({{ countComment() }})
+      &ensp;<b>Comments ({{ countComment() }})</b>
     </v-card-title>
     <v-card-text>
       <div v-for="item in SortComment" :key="item.cid">
         <div v-if="item.id == $route.params.detail">
-          <hr class="my-3" />
+          <hr class="mb-3" />
           <v-row wrap class="py-3 px-3">
-            <div class="headline text--primary pb-4">
-              <v-avatar :color="avatarColor(item.user)">
-                <span class="white--text text-h5">
+            <div class="text--primary pb-2" style="font-size: 18px">
+              <v-avatar size="36" :color="avatarColor(item.user)">
+                <span class="white--text text-h6">
                   {{ item.firstname.substring(0, 1)
                   }}{{ item.lastname.substring(0, 1) }}
                 </span>
               </v-avatar>
-              &nbsp;{{ item.firstname }} {{ item.lastname }}
+              &nbsp;<b>{{ item.firstname }} {{ item.lastname }}</b>
             </div>
             <v-spacer />
             <p class="text-caption mt-1 pr-3">{{ item.date }}</p>
           </v-row>
-          <div class="text-h6 text--primary pb-4">
-            <strong>{{ item.title }}</strong>
-          </div>
-          <div v-if="item.detail != ''" class="subheading text--primary pb-4">
+          <div
+            v-if="item.detail != ''"
+            class="subheading text--primary pt-1 pb-2"
+            style="font-size: 16px"
+          >
             {{ item.detail }}
           </div>
-          <div v-if="item.file != null" class="text--primary pb-4">
+          <div v-if="item.file != null" class="text--primary pb-2">
             <v-icon>fa-paperclip</v-icon>
             <v-chip v-for="fileitem in item.file" :key="fileitem" color="gray">
               {{ fileitem }}
@@ -106,7 +107,6 @@ export default {
           date: '5-07-2021',
           firstname: 'Teerapat',
           lastname: 'Satitporn',
-          title: 'First Comment',
           detail: 'This is my test comment',
           file: null,
         },
@@ -117,8 +117,7 @@ export default {
           date: '8-07-2021',
           firstname: 'Teerapat',
           lastname: 'Satitporn',
-          title: 'Please submit information in this button.',
-          detail: '',
+          detail: 'Please submit information in this button.',
           file: null,
         },
         {
@@ -128,7 +127,6 @@ export default {
           date: '9-07-2021',
           firstname: 'Teerapat',
           lastname: 'Satitporn',
-          title: 'Second Comment',
           detail: 'attach image',
           file: ['image1.jpg', 'image2.png'],
         },
@@ -139,7 +137,6 @@ export default {
           date: '12-07-2021',
           firstname: 'Teerapat',
           lastname: 'Satitporn',
-          title: 'Accept',
           detail: 'I receive this case',
           file: null,
         },
@@ -150,8 +147,7 @@ export default {
           date: '10-07-2021',
           firstname: 'Teerapat',
           lastname: 'Satitporn',
-          title: 'Please submit information in this button.',
-          detail: '',
+          detail: 'Please submit information in this button.',
           file: null,
         },
         {
@@ -161,7 +157,6 @@ export default {
           date: '8-07-2021',
           firstname: 'Teerapat',
           lastname: 'Satitporn',
-          title: 'Cancel this case',
           detail: 'I want to cancel',
           file: null,
         },
