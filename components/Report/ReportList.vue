@@ -46,9 +46,9 @@
               fab
               x-small
               color="info"
+              :to="ClickDetail(item.id)"
               v-bind="attrs"
               v-on="on"
-              @click="ClickDetail(item.id)"
             >
               <v-icon>fa-clipboard-list</v-icon>
             </v-btn>
@@ -147,12 +147,8 @@ export default {
     },
     // Change
     ClickDetail(ReportID) {
-      this.$router.push({
-        name: 'Report-detail',
-        params: {
-          detail: ReportID,
-        },
-      })
+      const path = '/Report/' + ReportID
+      return path
     },
     reportFilter(item) {
       this.SearchList = []

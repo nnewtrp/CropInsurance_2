@@ -7,7 +7,7 @@
     <v-card-text>
       <div v-for="item in SortComment" :key="item.cid">
         <div v-if="item.id == $route.params.detail">
-          <hr class="mb-3" />
+          <hr class="mb-3 mt-1" />
           <v-row wrap class="py-3 px-3">
             <div class="text--primary pb-2" style="font-size: 18px">
               <v-avatar size="36" :color="avatarColor(item.user)">
@@ -159,6 +159,16 @@ export default {
           lastname: 'Satitporn',
           detail: 'I want to cancel',
           file: null,
+        },
+        {
+          cid: '7',
+          id: '1',
+          user: 'Staff',
+          date: '10-07-2021',
+          firstname: 'Teerapat',
+          lastname: 'Satitporn',
+          detail: 'I want to cancel',
+          file: ['image1.jpg', 'image2.png'],
         },
       ],
       // Command
