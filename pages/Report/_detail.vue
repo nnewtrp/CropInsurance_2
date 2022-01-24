@@ -38,3 +38,9 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.vue2leaflet-map {
+  z-index: 1;
+}
+</style>
