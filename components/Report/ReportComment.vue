@@ -52,17 +52,11 @@
               Add New Comment
             </v-card-title>
             <v-card-text>
-              <v-text-field
-                v-model="title"
-                :rules="[rules.required]"
-                label="Title *"
-                prepend-icon="fa-pencil-alt"
-                required
-              ></v-text-field>
               <v-textarea
                 v-model="content"
                 :rules="[rules.required]"
                 label="Detail *"
+                outlined
                 prepend-icon="fa-sticky-note"
                 rows="4"
                 required
@@ -72,6 +66,7 @@
                 chips
                 multiple
                 label="Add File"
+                outlined
                 prepend-icon="fa-paperclip"
               ></v-file-input>
             </v-card-text>
@@ -95,7 +90,6 @@ export default {
   data() {
     return {
       // Data in comment input
-      title: '',
       content: '',
       file: null,
       // Data List
