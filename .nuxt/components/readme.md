@@ -17,3 +17,7 @@ You can directly use them in pages and other components without the need to impo
 - `<ReportDetail>` | `<report-detail>` (components/Report/ReportDetail.vue)
 - `<ReportList>` | `<report-list>` (components/Report/ReportList.vue)
 - `<ReportResult>` | `<report-result>` (components/Report/ReportResult.vue)
+- `<StaffReportHistoryList>` | `<staff-report-history-list>` (components/Staff/Report/HistoryList.vue)
+- `<StaffReportInProgressList>` | `<staff-report-in-progress-list>` (components/Staff/Report/InProgressList.vue)
+- `<StaffReportListMenu>` | `<staff-report-list-menu>` (components/Staff/Report/ListMenu.vue)
+- `<StaffReportNewReportList>` | `<staff-report-new-report-list>` (components/Staff/Report/NewReportList.vue)

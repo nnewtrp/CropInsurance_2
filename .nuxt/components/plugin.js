@@ -12,7 +12,11 @@ const components = {
   ReportComment: () => import('../..\\components\\Report\\ReportComment.vue' /* webpackChunkName: "components/report-comment" */).then(c => wrapFunctional(c.default || c)),
   ReportDetail: () => import('../..\\components\\Report\\ReportDetail.vue' /* webpackChunkName: "components/report-detail" */).then(c => wrapFunctional(c.default || c)),
   ReportList: () => import('../..\\components\\Report\\ReportList.vue' /* webpackChunkName: "components/report-list" */).then(c => wrapFunctional(c.default || c)),
-  ReportResult: () => import('../..\\components\\Report\\ReportResult.vue' /* webpackChunkName: "components/report-result" */).then(c => wrapFunctional(c.default || c))
+  ReportResult: () => import('../..\\components\\Report\\ReportResult.vue' /* webpackChunkName: "components/report-result" */).then(c => wrapFunctional(c.default || c)),
+  StaffReportHistoryList: () => import('../..\\components\\Staff\\Report\\HistoryList.vue' /* webpackChunkName: "components/staff-report-history-list" */).then(c => wrapFunctional(c.default || c)),
+  StaffReportInProgressList: () => import('../..\\components\\Staff\\Report\\InProgressList.vue' /* webpackChunkName: "components/staff-report-in-progress-list" */).then(c => wrapFunctional(c.default || c)),
+  StaffReportListMenu: () => import('../..\\components\\Staff\\Report\\ListMenu.vue' /* webpackChunkName: "components/staff-report-list-menu" */).then(c => wrapFunctional(c.default || c)),
+  StaffReportNewReportList: () => import('../..\\components\\Staff\\Report\\NewReportList.vue' /* webpackChunkName: "components/staff-report-new-report-list" */).then(c => wrapFunctional(c.default || c))
 }
 
 for (const name in components) {

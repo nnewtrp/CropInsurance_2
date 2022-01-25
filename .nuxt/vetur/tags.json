@@ -31,5 +31,17 @@
   },
   "ReportResult": {
     "description": "Auto imported from components/Report/ReportResult.vue"
+  },
+  "StaffReportHistoryList": {
+    "description": "Auto imported from components/Staff/Report/HistoryList.vue"
+  },
+  "StaffReportInProgressList": {
+    "description": "Auto imported from components/Staff/Report/InProgressList.vue"
+  },
+  "StaffReportListMenu": {
+    "description": "Auto imported from components/Staff/Report/ListMenu.vue"
+  },
+  "StaffReportNewReportList": {
+    "description": "Auto imported from components/Staff/Report/NewReportList.vue"
   }
 }
