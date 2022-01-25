@@ -53,7 +53,7 @@
               <v-icon>fa-clipboard-list</v-icon>
             </v-btn>
           </template>
-          <span>See Details</span>
+          <span>See Detail</span>
         </v-tooltip>
       </template>
     </v-data-table>

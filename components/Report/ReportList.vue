@@ -53,8 +53,46 @@
               <v-icon>fa-clipboard-list</v-icon>
             </v-btn>
           </template>
-          <span>See Details</span>
+          <span>See Detail</span>
         </v-tooltip>
+        <v-dialog v-model="item.cdialog" width="600">
+          <template #activator="{ on: dialog, attrs }">
+            <v-tooltip top open-delay="200">
+              <template #activator="{ on: tooltip }">
+                <v-btn
+                  v-if="item.status == 'New Case'"
+                  slot="activator"
+                  fab
+                  x-small
+                  color="error"
+                  v-bind="attrs"
+                  v-on="{ ...dialog, ...tooltip }"
+                >
+                  <v-icon>fa-ban</v-icon>
+                </v-btn>
+                <v-btn v-else fab x-small depressed disabled>
+                  <v-icon>fa-ban</v-icon>
+                </v-btn>
+              </template>
+              <span>Cancel This Report</span>
+            </v-tooltip>
+          </template>
+          <v-card>
+            <v-card-title class="headline justify-center">
+              Do you want to cancel this report?
+            </v-card-title>
+            <v-card-actions class="justify-center">
+              <v-btn color="info" @click="item.cdialog = false">
+                No
+                <v-icon right>fa-times</v-icon>
+              </v-btn>
+              <v-btn color="error" @click="cancel(item)">
+                Yes
+                <v-icon right>fa-check</v-icon>
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
       </template>
     </v-data-table>
   </v-card>
@@ -81,7 +119,7 @@ export default {
         },
         { text: 'Status', value: 'status', filterable: false },
         {
-          text: 'Detail',
+          text: 'Detail / Cancel',
           value: 'detail',
           filterable: false,
           sortable: false,
@@ -93,24 +131,28 @@ export default {
           title: 'Flood',
           date: '12-01-2022',
           status: 'Complete',
+          cdialog: false,
         },
         {
           id: 2,
           title: 'Flood',
           date: '13-01-2022',
           status: 'In Progress',
+          cdialog: false,
         },
         {
           id: 3,
           title: 'Flood',
           date: '14-01-2022',
           status: 'New Case',
+          cdialog: false,
         },
         {
           id: 4,
           title: 'Flood',
           date: '14-01-2022',
           status: 'New Case',
+          cdialog: false,
         },
       ],
     }
@@ -119,7 +161,7 @@ export default {
     SearchByList() {
       const list = []
       for (const i in this.headers) {
-        if (this.headers[i].text !== 'Detail') {
+        if (this.headers[i].text !== 'Detail / Cancel') {
           list.push(this.headers[i].text)
         }
       }
@@ -170,6 +212,9 @@ export default {
           return this.headers[i].value
         }
       }
+    },
+    cancel(item) {
+      item.cdialog = false
     },
   },
 }

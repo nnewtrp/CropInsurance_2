@@ -10,6 +10,8 @@ const _32860ef6 = () => interopDefault(import('..\\pages\\Report\\index.vue' /* 
 const _321089c2 = () => interopDefault(import('..\\pages\\Profile\\editProfile.vue' /* webpackChunkName: "pages/Profile/editProfile" */))
 const _3a661e2a = () => interopDefault(import('..\\pages\\Profile\\password.vue' /* webpackChunkName: "pages/Profile/password" */))
 const _02e38887 = () => interopDefault(import('..\\pages\\Staff\\Report\\index.vue' /* webpackChunkName: "pages/Staff/Report/index" */))
+const _3f6927e9 = () => interopDefault(import('..\\pages\\Staff\\Report\\History.vue' /* webpackChunkName: "pages/Staff/Report/History" */))
+const _2c3c8b09 = () => interopDefault(import('..\\pages\\Staff\\Report\\NewReport.vue' /* webpackChunkName: "pages/Staff/Report/NewReport" */))
 const _6bc43a36 = () => interopDefault(import('..\\pages\\Staff\\Report\\_detail.vue' /* webpackChunkName: "pages/Staff/Report/_detail" */))
 const _1d5b4b63 = () => interopDefault(import('..\\pages\\Report\\_detail.vue' /* webpackChunkName: "pages/Report/_detail" */))
 const _f058de4e = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
@@ -49,6 +51,14 @@ export const routerOptions = {
     path: "/Staff/Report",
     component: _02e38887,
     name: "Staff-Report"
+  }, {
+    path: "/Staff/Report/History",
+    component: _3f6927e9,
+    name: "Staff-Report-History"
+  }, {
+    path: "/Staff/Report/NewReport",
+    component: _2c3c8b09,
+    name: "Staff-Report-NewReport"
   }, {
     path: "/Staff/Report/:detail",
     component: _6bc43a36,

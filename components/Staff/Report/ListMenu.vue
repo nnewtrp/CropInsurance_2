@@ -32,11 +32,11 @@ export default {
           title: 'In Progress',
         },
         {
-          to: '/Staff/Report',
+          to: '/Staff/Report/NewReport',
           title: 'New Report',
         },
         {
-          to: '/Staff/Report',
+          to: '/Staff/Report/History',
           title: 'History',
         },
       ],

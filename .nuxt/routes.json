@@ -3,54 +3,77 @@
     "name": "Form",
     "path": "/Form",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Form\\\\index.vue",
-    "chunkName": "pages/Form/index"
+    "chunkName": "pages/Form/index",
+    "_name": "_13576eb5"
   },
   {
     "name": "Profile",
     "path": "/Profile",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Profile\\\\index.vue",
-    "chunkName": "pages/Profile/index"
+    "chunkName": "pages/Profile/index",
+    "_name": "_7269b79c"
   },
   {
     "name": "Report",
     "path": "/Report",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Report\\\\index.vue",
-    "chunkName": "pages/Report/index"
+    "chunkName": "pages/Report/index",
+    "_name": "_32860ef6"
   },
   {
     "name": "Profile-editProfile",
     "path": "/Profile/editProfile",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Profile\\\\editProfile.vue",
-    "chunkName": "pages/Profile/editProfile"
+    "chunkName": "pages/Profile/editProfile",
+    "_name": "_321089c2"
   },
   {
     "name": "Profile-password",
     "path": "/Profile/password",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Profile\\\\password.vue",
-    "chunkName": "pages/Profile/password"
+    "chunkName": "pages/Profile/password",
+    "_name": "_3a661e2a"
   },
   {
     "name": "Staff-Report",
     "path": "/Staff/Report",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Report\\\\index.vue",
-    "chunkName": "pages/Staff/Report/index"
+    "chunkName": "pages/Staff/Report/index",
+    "_name": "_02e38887"
+  },
+  {
+    "name": "Staff-Report-History",
+    "path": "/Staff/Report/History",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Report\\\\History.vue",
+    "chunkName": "pages/Staff/Report/History",
+    "_name": "_3f6927e9"
+  },
+  {
+    "name": "Staff-Report-NewReport",
+    "path": "/Staff/Report/NewReport",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Report\\\\NewReport.vue",
+    "chunkName": "pages/Staff/Report/NewReport",
+    "_name": "_2c3c8b09"
   },
   {
     "name": "Staff-Report-detail",
     "path": "/Staff/Report/:detail",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Report\\\\_detail.vue",
-    "chunkName": "pages/Staff/Report/_detail"
+    "chunkName": "pages/Staff/Report/_detail",
+    "_name": "_6bc43a36"
   },
   {
     "name": "Report-detail",
     "path": "/Report/:detail",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Report\\\\_detail.vue",
-    "chunkName": "pages/Report/_detail"
+    "chunkName": "pages/Report/_detail",
+    "_name": "_1d5b4b63"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_f058de4e"
   }
 ]
