@@ -46,7 +46,7 @@
               fab
               x-small
               color="info"
-              :to="ClickDetail(item.id)"
+              :to="ClickDetail(item.id, item.status)"
               v-bind="attrs"
               v-on="on"
             >
@@ -151,8 +151,8 @@ export default {
       else if (status === 'Cancel') return 'error'
     },
     // Change
-    ClickDetail(ReportID) {
-      const path = '/Staff/Report/' + ReportID
+    ClickDetail(ReportID, Status) {
+      const path = '/Staff/Report/' + ReportID + '?status=' + Status
       return path
     },
     reportFilter(item) {

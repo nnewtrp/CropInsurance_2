@@ -32,6 +32,9 @@
   "ReportResult": {
     "description": "Auto imported from components/Report/ReportResult.vue"
   },
+  "ReportStaffReportResult": {
+    "description": "Auto imported from components/Report/StaffReportResult.vue"
+  },
   "StaffReportHistoryList": {
     "description": "Auto imported from components/Staff/Report/HistoryList.vue"
   },

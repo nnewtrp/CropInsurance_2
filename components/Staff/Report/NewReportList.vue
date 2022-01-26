@@ -46,7 +46,7 @@
               fab
               x-small
               color="info"
-              :to="ClickDetail(item.id)"
+              :to="ClickDetail(item.id, item.status)"
               v-bind="attrs"
               v-on="on"
             >
@@ -55,6 +55,40 @@
           </template>
           <span>See Detail</span>
         </v-tooltip>
+        <v-dialog v-model="item.sdialog" width="600">
+          <template #activator="{ on: dialog, attrs }">
+            <v-tooltip top open-delay="200">
+              <template #activator="{ on: tooltip }">
+                <v-btn
+                  slot="activator"
+                  fab
+                  x-small
+                  color="warning"
+                  v-bind="attrs"
+                  v-on="{ ...dialog, ...tooltip }"
+                >
+                  <v-icon>far fa-check-circle</v-icon>
+                </v-btn>
+              </template>
+              <span>Select This Report</span>
+            </v-tooltip>
+          </template>
+          <v-card>
+            <v-card-title class="headline justify-center">
+              Do you want to select this report?
+            </v-card-title>
+            <v-card-actions class="justify-center">
+              <v-btn color="error" @click="item.sdialog = false">
+                No
+                <v-icon right>fa-times</v-icon>
+              </v-btn>
+              <v-btn color="success" @click="select(item)">
+                Yes
+                <v-icon right>fa-check</v-icon>
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
       </template>
     </v-data-table>
   </v-card>
@@ -81,7 +115,7 @@ export default {
         },
         { text: 'Status', value: 'status', filterable: false },
         {
-          text: 'Detail',
+          text: 'Detail / Select',
           value: 'detail',
           filterable: false,
           sortable: false,
@@ -93,24 +127,28 @@ export default {
           title: 'Flood',
           date: '12-01-2022',
           status: 'Complete',
+          sdialog: false,
         },
         {
           id: 2,
           title: 'Flood',
           date: '13-01-2022',
           status: 'In Progress',
+          sdialog: false,
         },
         {
           id: 3,
           title: 'Flood',
           date: '14-01-2022',
           status: 'New Case',
+          sdialog: false,
         },
         {
           id: 4,
           title: 'Flood',
           date: '14-01-2022',
           status: 'New Case',
+          sdialog: false,
         },
       ],
     }
@@ -151,8 +189,8 @@ export default {
       else if (status === 'Cancel') return 'error'
     },
     // Change
-    ClickDetail(ReportID) {
-      const path = '/Staff/Report/' + ReportID
+    ClickDetail(ReportID, Status) {
+      const path = '/Staff/Report/' + ReportID + '?status=' + Status
       return path
     },
     reportFilter(item) {
@@ -175,6 +213,9 @@ export default {
           return this.headers[i].value
         }
       }
+    },
+    select(item) {
+      item.sdialog = false
     },
   },
 }

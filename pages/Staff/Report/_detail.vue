@@ -6,7 +6,7 @@
       cols="12"
       md="1"
       class="my-16 mr-2 d-none d-md-block"
-      @click="$router.push({ name: 'Staff-Report' })"
+      @click="back()"
     >
       <v-icon>fa-arrow-circle-left</v-icon>
     </v-btn>
@@ -14,7 +14,7 @@
       <ReportDetail />
     </v-col>
     <v-col cols="12" sm="12" md="4" class="my-8">
-      <ReportResult />
+      <StaffReportResult />
       <ReportComment />
     </v-col>
   </v-layout>
@@ -22,19 +22,30 @@
 
 <script>
 import ReportDetail from '~/components/Report/ReportDetail.vue'
-import ReportResult from '~/components/Report/ReportResult.vue'
+import StaffReportResult from '~/components/Report/StaffReportResult.vue'
 import ReportComment from '~/components/Report/ReportComment.vue'
 
 export default {
   components: {
     ReportDetail,
-    ReportResult,
+    StaffReportResult,
     ReportComment,
   },
   head() {
     return {
       title: 'Report ' + this.$route.params.detail,
     }
+  },
+  methods: {
+    back() {
+      if (this.$route.query.status === 'In Progress') {
+        this.$router.push({ name: 'Staff-Report' })
+      } else if (this.$route.query.status === 'New Case') {
+        this.$router.push({ name: 'Staff-Report-NewReport' })
+      } else {
+        this.$router.push({ name: 'Staff-Report-History' })
+      }
+    },
   },
 }
 </script>
