@@ -35,11 +35,25 @@
     "_name": "_3a661e2a"
   },
   {
+    "name": "Staff-Profile",
+    "path": "/Staff/Profile",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Profile\\\\index.vue",
+    "chunkName": "pages/Staff/Profile/index",
+    "_name": "_2f769470"
+  },
+  {
     "name": "Staff-Report",
     "path": "/Staff/Report",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Report\\\\index.vue",
     "chunkName": "pages/Staff/Report/index",
     "_name": "_02e38887"
+  },
+  {
+    "name": "Staff-Profile-editProfile",
+    "path": "/Staff/Profile/editProfile",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Profile\\\\editProfile.vue",
+    "chunkName": "pages/Staff/Profile/editProfile",
+    "_name": "_6d1184dd"
   },
   {
     "name": "Staff-Report-History",
