@@ -53,7 +53,7 @@
             </v-card-title>
             <v-card-text>
               <v-textarea
-                v-model="content"
+                v-model="detail"
                 :rules="[rules.required]"
                 label="Detail *"
                 outlined
@@ -65,7 +65,7 @@
                 v-model="file"
                 chips
                 multiple
-                label="Add File"
+                label="Add File (Optional)"
                 outlined
                 prepend-icon="fa-paperclip"
               ></v-file-input>
@@ -90,7 +90,7 @@ export default {
   data() {
     return {
       // Data in comment input
-      content: '',
+      detail: '',
       file: null,
       // Data List
       comments: [
@@ -190,8 +190,8 @@ export default {
       this.$refs.form.resetValidation()
     },
     avatarColor(user) {
-      if (user === 'User') return 'accent'
-      else if (user === 'Staff') return 'primary'
+      if (user === 'User') return 'primary'
+      else if (user === 'Staff') return 'accent'
     },
     countComment() {
       let count = 0
