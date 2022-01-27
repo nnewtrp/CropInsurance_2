@@ -3,7 +3,12 @@
     <v-app-bar app class="primary">
       <v-toolbar-title style="color: white; font-weight: bold" v-text="title" />
       <v-spacer />
-      <div v-if="$route.path.includes('/Staff/') == false">
+      <div
+        v-if="
+          $route.path.includes('/Staff/') == false &&
+          $route.path.includes('/Auth/') == false
+        "
+      >
         <v-btn
           text
           color="white"
@@ -30,8 +35,27 @@
       <div v-if="$route.path.includes('/Staff/')">
         <StaffAvatarMenu />
       </div>
-      <div v-else>
+      <div v-else-if="$route.path.includes('/Auth/') == false">
         <AvatarMenu />
+      </div>
+      <div v-if="$route.path.includes('/Auth/')">
+        <v-btn
+          color="white"
+          class="mr-2 hidden-xs-only"
+          depressed
+          @click="$router.push({ name: 'Auth-signup' })"
+        >
+          Sign Up
+        </v-btn>
+        <v-btn
+          color="white"
+          class="mr-1 hidden-xs-only"
+          depressed
+          @click="$router.push({ name: 'Auth-login' })"
+        >
+          Log In
+          <v-icon right>fas fa-sign-in-alt</v-icon>
+        </v-btn>
       </div>
     </v-app-bar>
     <v-main>

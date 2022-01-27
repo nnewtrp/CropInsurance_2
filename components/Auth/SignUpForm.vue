@@ -5,15 +5,35 @@
         style="font-weight: bold; color: black"
         class="ml-2 mt-4 text-decoration-overline"
       >
-        Log
+        Sign
       </h2>
-      <h2 style="font-weight: bold; color: black" class="mt-4">&nbsp;In</h2>
+      <h2 style="font-weight: bold; color: black" class="mt-4">&nbsp;Up</h2>
     </v-card-title>
     <v-form ref="form">
       <v-card-text>
+        <v-row wrap>
+          <v-col cols="12" xs="12" sm="6" md="6">
+            <v-text-field
+              v-model="firstname"
+              label="First Name *"
+              outlined
+              :rules="[rules.required]"
+              required
+            ></v-text-field>
+          </v-col>
+          <v-col cols="12" xs="12" sm="6" md="6">
+            <v-text-field
+              v-model="lastname"
+              label="Last Name *"
+              outlined
+              :rules="[rules.required]"
+              required
+            ></v-text-field>
+          </v-col>
+        </v-row>
         <v-text-field
           v-model="email"
-          label="Email"
+          label="Email *"
           outlined
           :rules="[rules.required]"
           required
@@ -22,7 +42,7 @@
           v-model="password"
           :append-icon="Logo ? 'fa-eye' : 'fa-eye-slash'"
           :type="Logo ? 'text' : 'password'"
-          label="Password"
+          label="Password *"
           outlined
           :rules="[rules.required]"
           required
@@ -36,7 +56,7 @@
         class="mx-5 mb-4"
         @click="$router.push({ name: 'Report' })"
       >
-        Login
+        Sign Up
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -47,6 +67,8 @@ export default {
   data() {
     return {
       // Data
+      firstname: '',
+      lastname: '',
       email: '',
       password: '',
       // Command

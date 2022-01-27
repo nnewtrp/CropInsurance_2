@@ -8,6 +8,7 @@ const _13576eb5 = () => interopDefault(import('..\\pages\\Form\\index.vue' /* we
 const _7269b79c = () => interopDefault(import('..\\pages\\Profile\\index.vue' /* webpackChunkName: "pages/Profile/index" */))
 const _32860ef6 = () => interopDefault(import('..\\pages\\Report\\index.vue' /* webpackChunkName: "pages/Report/index" */))
 const _1d768a68 = () => interopDefault(import('..\\pages\\Auth\\login.vue' /* webpackChunkName: "pages/Auth/login" */))
+const _4496a0ae = () => interopDefault(import('..\\pages\\Auth\\signup.vue' /* webpackChunkName: "pages/Auth/signup" */))
 const _321089c2 = () => interopDefault(import('..\\pages\\Profile\\editProfile.vue' /* webpackChunkName: "pages/Profile/editProfile" */))
 const _3a661e2a = () => interopDefault(import('..\\pages\\Profile\\password.vue' /* webpackChunkName: "pages/Profile/password" */))
 const _2f769470 = () => interopDefault(import('..\\pages\\Staff\\Profile\\index.vue' /* webpackChunkName: "pages/Staff/Profile/index" */))
@@ -47,6 +48,10 @@ export const routerOptions = {
     path: "/Auth/login",
     component: _1d768a68,
     name: "Auth-login"
+  }, {
+    path: "/Auth/signup",
+    component: _4496a0ae,
+    name: "Auth-signup"
   }, {
     path: "/Profile/editProfile",
     component: _321089c2,

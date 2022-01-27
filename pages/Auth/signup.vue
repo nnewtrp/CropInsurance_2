@@ -4,27 +4,23 @@
       <AuthPicture />
     </v-col>
     <v-col cols="12" sm="12" md="5">
-      <LoginForm />
-      <div class="mt-3 mr-2" style="text-align: right; color: #808080">
-        Don't have any account?
-        <a href="/auth/signup">Sign Up</a>
-      </div>
+      <SignUpForm />
     </v-col>
   </v-row>
 </template>
 
 <script>
 import AuthPicture from '~/components/Auth/AuthPicture.vue'
-import LoginForm from '~/components/Auth/LoginForm.vue'
+import SignUpForm from '~/components/Auth/SignUpForm.vue'
 
 export default {
   components: {
     AuthPicture,
-    LoginForm,
+    SignUpForm,
   },
   head() {
     return {
-      title: 'Log In',
+      title: 'Sign Up',
     }
   },
 }

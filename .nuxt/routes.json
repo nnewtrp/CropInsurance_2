@@ -24,6 +24,12 @@
     "chunkName": "pages/Auth/login"
   },
   {
+    "name": "Auth-signup",
+    "path": "/Auth/signup",
+    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Auth\\\\signup.vue",
+    "chunkName": "pages/Auth/signup"
+  },
+  {
     "name": "Profile-editProfile",
     "path": "/Profile/editProfile",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Profile\\\\editProfile.vue",
