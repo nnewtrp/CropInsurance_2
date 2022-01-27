@@ -40,7 +40,11 @@ export default {
     return {
       menus: [
         { title: 'Profile', to: 'Staff-Profile', icon: 'fa-user' },
-        { title: 'Change Password', to: 'Profile-password', icon: 'fa-lock' },
+        {
+          title: 'Change Password',
+          to: 'Staff-Profile-password',
+          icon: 'fa-lock',
+        },
         { title: 'Logout', to: '', icon: 'fa-sign-out-alt' },
       ],
       // User

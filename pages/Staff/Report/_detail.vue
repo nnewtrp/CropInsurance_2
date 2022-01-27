@@ -31,6 +31,36 @@ export default {
     StaffReportResult,
     ReportComment,
   },
+  data() {
+    return {
+      reports: [
+        {
+          id: 1,
+          status: 'Complete',
+          receiver: 'Chayanon Noisapung',
+          result: '5000 THB',
+        },
+        {
+          id: 2,
+          status: 'In Progress',
+          receiver: 'Chayanon Noisapung',
+          result: '',
+        },
+        {
+          id: 3,
+          status: 'New Case',
+          receiver: '',
+          result: '',
+        },
+        {
+          id: 4,
+          status: 'New Case',
+          receiver: '',
+          result: '',
+        },
+      ],
+    }
+  },
   head() {
     return {
       title: 'Report ' + this.$route.params.detail,
@@ -38,13 +68,22 @@ export default {
   },
   methods: {
     back() {
-      if (this.$route.query.status === 'In Progress') {
+      if (this.getStatus(this.$route.params.detail) === 'In Progress') {
         this.$router.push({ name: 'Staff-Report' })
-      } else if (this.$route.query.status === 'New Case') {
+      } else if (this.getStatus(this.$route.params.detail) === 'New Case') {
         this.$router.push({ name: 'Staff-Report-NewReport' })
       } else {
         this.$router.push({ name: 'Staff-Report-History' })
       }
+    },
+    getStatus(id) {
+      let status = ''
+      for (const i in this.reports) {
+        if (this.reports[i].id === parseInt(id)) {
+          status = this.reports[i].status
+        }
+      }
+      return status
     },
   },
 }

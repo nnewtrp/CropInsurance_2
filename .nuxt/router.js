@@ -7,11 +7,13 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _13576eb5 = () => interopDefault(import('..\\pages\\Form\\index.vue' /* webpackChunkName: "pages/Form/index" */))
 const _7269b79c = () => interopDefault(import('..\\pages\\Profile\\index.vue' /* webpackChunkName: "pages/Profile/index" */))
 const _32860ef6 = () => interopDefault(import('..\\pages\\Report\\index.vue' /* webpackChunkName: "pages/Report/index" */))
+const _1d768a68 = () => interopDefault(import('..\\pages\\Auth\\login.vue' /* webpackChunkName: "pages/Auth/login" */))
 const _321089c2 = () => interopDefault(import('..\\pages\\Profile\\editProfile.vue' /* webpackChunkName: "pages/Profile/editProfile" */))
 const _3a661e2a = () => interopDefault(import('..\\pages\\Profile\\password.vue' /* webpackChunkName: "pages/Profile/password" */))
 const _2f769470 = () => interopDefault(import('..\\pages\\Staff\\Profile\\index.vue' /* webpackChunkName: "pages/Staff/Profile/index" */))
 const _02e38887 = () => interopDefault(import('..\\pages\\Staff\\Report\\index.vue' /* webpackChunkName: "pages/Staff/Report/index" */))
 const _6d1184dd = () => interopDefault(import('..\\pages\\Staff\\Profile\\editProfile.vue' /* webpackChunkName: "pages/Staff/Profile/editProfile" */))
+const _6947afed = () => interopDefault(import('..\\pages\\Staff\\Profile\\password.vue' /* webpackChunkName: "pages/Staff/Profile/password" */))
 const _3f6927e9 = () => interopDefault(import('..\\pages\\Staff\\Report\\History.vue' /* webpackChunkName: "pages/Staff/Report/History" */))
 const _2c3c8b09 = () => interopDefault(import('..\\pages\\Staff\\Report\\NewReport.vue' /* webpackChunkName: "pages/Staff/Report/NewReport" */))
 const _6bc43a36 = () => interopDefault(import('..\\pages\\Staff\\Report\\_detail.vue' /* webpackChunkName: "pages/Staff/Report/_detail" */))
@@ -42,6 +44,10 @@ export const routerOptions = {
     component: _32860ef6,
     name: "Report"
   }, {
+    path: "/Auth/login",
+    component: _1d768a68,
+    name: "Auth-login"
+  }, {
     path: "/Profile/editProfile",
     component: _321089c2,
     name: "Profile-editProfile"
@@ -61,6 +67,10 @@ export const routerOptions = {
     path: "/Staff/Profile/editProfile",
     component: _6d1184dd,
     name: "Staff-Profile-editProfile"
+  }, {
+    path: "/Staff/Profile/password",
+    component: _6947afed,
+    name: "Staff-Profile-password"
   }, {
     path: "/Staff/Report/History",
     component: _3f6927e9,

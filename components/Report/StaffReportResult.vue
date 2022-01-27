@@ -19,7 +19,7 @@
         </div>
       </v-card-text>
     </div>
-    <v-card-actions v-if="$route.query.status == 'New Case'">
+    <v-card-actions v-if="getStatus($route.params.detail) == 'New Case'">
       <v-spacer />
       <v-dialog v-model="sdialog" width="600">
         <template #activator="{ on: dialog, attrs }">
@@ -55,7 +55,7 @@
         </v-card>
       </v-dialog>
     </v-card-actions>
-    <v-card-actions v-if="$route.query.status == 'In Progress'">
+    <v-card-actions v-if="getStatus($route.params.detail) == 'In Progress'">
       <v-spacer />
       <v-dialog v-model="rdialog" persistent width="600">
         <template #activator="{ on: dialog, attrs }">
@@ -174,6 +174,15 @@ export default {
     cancel() {
       this.rdialog = false
       this.$refs.form.resetValidation()
+    },
+    getStatus(id) {
+      let status = ''
+      for (const i in this.reports) {
+        if (this.reports[i].id === parseInt(id)) {
+          status = this.reports[i].status
+        }
+      }
+      return status
     },
   },
 }
