@@ -15,7 +15,7 @@
           v-model="email"
           label="Email"
           outlined
-          :rules="[rules.required]"
+          :rules="[rules.requiredEmail]"
           required
         ></v-text-field>
         <v-text-field
@@ -24,20 +24,14 @@
           :type="Logo ? 'text' : 'password'"
           label="Password"
           outlined
-          :rules="[rules.required]"
+          :rules="[rules.requiredPass]"
           required
           @click:append="Logo = !Logo"
         ></v-text-field>
       </v-card-text>
     </v-form>
     <v-card-actions class="justify-center">
-      <v-btn
-        color="success"
-        class="mx-5 mb-4"
-        @click="$router.push({ name: 'Report' })"
-      >
-        Login
-      </v-btn>
+      <v-btn color="success" class="mx-5 mb-4" @click="login"> Login </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -51,10 +45,18 @@ export default {
       password: '',
       // Command
       rules: {
-        required: (value) => !!value || 'This field is required.',
+        requiredEmail: (value) => !!value || 'Email is required.',
+        requiredPass: (value) => !!value || 'Password is required.',
       },
       Logo: false,
     }
+  },
+  methods: {
+    login() {
+      if (this.$refs.form.validate()) {
+        this.$router.push({ path: '/' })
+      }
+    },
   },
 }
 </script>

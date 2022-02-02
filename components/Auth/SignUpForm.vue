@@ -35,7 +35,8 @@
           v-model="email"
           label="Email *"
           outlined
-          :rules="[rules.required]"
+          :rules="[rules.required, rules.emailRule]"
+          placeholder="example@example.com"
           required
         ></v-text-field>
         <v-text-field
@@ -44,9 +45,21 @@
           :type="Logo ? 'text' : 'password'"
           label="Password *"
           outlined
-          :rules="[rules.required]"
+          :rules="[rules.required, rules.minPass]"
+          hint="At least 8 characters"
+          counter
           required
           @click:append="Logo = !Logo"
+        ></v-text-field>
+        <v-text-field
+          v-model="cpassword"
+          :append-icon="cLogo ? 'fa-eye' : 'fa-eye-slash'"
+          :type="cLogo ? 'text' : 'password'"
+          label="Confirm Password *"
+          outlined
+          :rules="[rules.required, ConfirmationRule]"
+          required
+          @click:append="cLogo = !cLogo"
         ></v-text-field>
       </v-card-text>
     </v-form>
@@ -54,7 +67,7 @@
       <v-btn
         color="success"
         class="mx-5 mb-4"
-        @click="$router.push({ name: 'Report' })"
+        @click="$router.push({ name: 'Auth-login' })"
       >
         Sign Up
       </v-btn>
@@ -71,12 +84,24 @@ export default {
       lastname: '',
       email: '',
       password: '',
+      cpassword: '',
       // Command
       rules: {
         required: (value) => !!value || 'This field is required.',
+        emailRule: (value) => /.+@.+\..+/.test(value) || 'E-mail must be valid',
+        minPass: (value) =>
+          value.length >= 8 || 'Minimum of password is 8 characters',
       },
       Logo: false,
+      cLogo: false,
     }
+  },
+  computed: {
+    ConfirmationRule() {
+      return () =>
+        this.password === this.cpassword ||
+        'Your password and confirm password must match'
+    },
   },
 }
 </script>

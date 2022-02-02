@@ -47,12 +47,6 @@
   "ReportStaffReportResult": {
     "description": "Auto imported from components/Report/StaffReportResult.vue"
   },
-  "StaffEditProfile": {
-    "description": "Auto imported from components/Staff/Profile/StaffEditProfile.vue"
-  },
-  "StaffProfile": {
-    "description": "Auto imported from components/Staff/Profile/StaffProfile.vue"
-  },
   "StaffReportHistoryList": {
     "description": "Auto imported from components/Staff/Report/HistoryList.vue"
   },
@@ -64,5 +58,11 @@
   },
   "StaffReportNewReportList": {
     "description": "Auto imported from components/Staff/Report/NewReportList.vue"
+  },
+  "StaffEditProfile": {
+    "description": "Auto imported from components/Staff/Profile/StaffEditProfile.vue"
+  },
+  "StaffProfile": {
+    "description": "Auto imported from components/Staff/Profile/StaffProfile.vue"
   }
 }
