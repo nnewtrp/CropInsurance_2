@@ -18,7 +18,7 @@
         <tbody>
           <tr v-for="item in SortReports.slice(0, 3)" :key="item.id">
             <td style="font-weight: bold">{{ item.id }}</td>
-            <td style="font-weight: bold">{{ item.title }}</td>
+            <td style="font-weight: bold">{{ silceTitle(item.title) }}</td>
             <td style="font-weight: bold">{{ item.date }}</td>
             <td style="font-weight: bold">
               <v-chip :color="getSColor(item.status)">
@@ -70,7 +70,7 @@ export default {
         },
         {
           id: 4,
-          title: 'Flood',
+          title: 'Flood in my farm and it cause my work',
           date: '14-01-2022',
           status: 'New Case',
         },
@@ -89,6 +89,10 @@ export default {
       else if (status === 'In Progress') return 'warning'
       else if (status === 'Complete') return 'success'
       else if (status === 'Cancel') return 'error'
+    },
+    silceTitle(title) {
+      if (title.length < 25) return title
+      else return title.slice(0, 25) + '...'
     },
   },
 }
