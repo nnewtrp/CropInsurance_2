@@ -18,6 +18,7 @@ export default {
     HistoryList,
     ListMenu,
   },
+  layout: 'Staff',
   head() {
     return {
       title: 'All Report',

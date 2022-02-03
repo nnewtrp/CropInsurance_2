@@ -23,6 +23,7 @@ export default {
   components: {
     ChangePassword,
   },
+  layout: 'Staff',
   head() {
     return {
       title: 'Change Password',

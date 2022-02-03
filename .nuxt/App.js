@@ -10,9 +10,11 @@ import '..\\node_modules\\leaflet\\dist\\leaflet.css'
 
 import '..\\node_modules\\vuetify\\dist\\vuetify.css'
 
+import _2d12f2be from '..\\layouts\\Auth.vue'
 import _6f6c098b from '..\\layouts\\default.vue'
+import _7648508a from '..\\layouts\\Staff.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_Auth": sanitizeComponent(_2d12f2be),"_default": sanitizeComponent(_6f6c098b),"_Staff": sanitizeComponent(_7648508a) }
 
 export default {
   render (h, props) {

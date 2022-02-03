@@ -18,6 +18,7 @@ export default {
     AuthPicture,
     SignUpForm,
   },
+  layout: 'Auth',
   head() {
     return {
       title: 'Sign Up',

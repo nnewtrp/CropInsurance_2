@@ -18,6 +18,7 @@ export default {
     InProgressList,
     ListMenu,
   },
+  layout: 'Staff',
   head() {
     return {
       title: 'All Report',

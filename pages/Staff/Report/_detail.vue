@@ -31,6 +31,7 @@ export default {
     StaffReportResult,
     ReportComment,
   },
+  layout: 'Staff',
   data() {
     return {
       reports: [

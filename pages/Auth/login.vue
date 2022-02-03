@@ -7,7 +7,7 @@
       <LoginForm />
       <div class="mt-3 mr-2" style="text-align: right; color: #808080">
         Don't have any account?
-        <a href="/auth/signup">Sign Up</a>
+        <a href="/Auth/signup">Sign Up</a>
       </div>
     </v-col>
   </v-row>
@@ -22,6 +22,7 @@ export default {
     AuthPicture,
     LoginForm,
   },
+  layout: 'Auth',
   head() {
     return {
       title: 'Log In',

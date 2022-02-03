@@ -18,6 +18,7 @@ export default {
     NewReportList,
     ListMenu,
   },
+  layout: 'Staff',
   head() {
     return {
       title: 'All Report',

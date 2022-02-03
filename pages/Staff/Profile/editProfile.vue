@@ -23,5 +23,6 @@ export default {
   components: {
     StaffEditProfile,
   },
+  layout: 'Staff',
 }
 </script>
