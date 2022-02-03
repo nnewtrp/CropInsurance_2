@@ -190,8 +190,8 @@ export default {
       this.$refs.form.resetValidation()
     },
     avatarColor(user) {
-      if (user === 'User') return 'primary'
-      else if (user === 'Staff') return 'accent'
+      if (user === 'User') return 'accent'
+      else if (user === 'Staff') return 'primary'
     },
     countComment() {
       let count = 0

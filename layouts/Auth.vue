@@ -21,11 +21,18 @@
         <v-icon right>fas fa-sign-in-alt</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
-    </v-main>
+    <v-row wrap>
+      <v-col cols="12" md="7" lg="7" class="white pt-15 d-none d-md-block">
+        <AuthPicture />
+      </v-col>
+      <v-col cols="12" sm="12" md="5" lg="5">
+        <v-main>
+          <v-container>
+            <Nuxt />
+          </v-container>
+        </v-main>
+      </v-col>
+    </v-row>
     <v-footer class="primary">
       <span style="color: white">
         Crop Insurance System &copy; {{ new Date().getFullYear() }}
@@ -35,8 +42,13 @@
 </template>
 
 <script>
+import AuthPicture from '~/components/Auth/AuthPicture.vue'
+
 export default {
   name: 'AuthLayout',
+  components: {
+    AuthPicture,
+  },
   data() {
     return {
       title: 'Crop Insurance',
