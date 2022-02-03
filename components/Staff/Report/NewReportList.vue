@@ -9,9 +9,9 @@
       <v-row wrap>
         <v-col cols="12" xs="12" sm="4" md="3">
           <v-autocomplete
-            v-model="searchBy"
-            :items="SearchByList"
-            label="Search By"
+            v-model="filter"
+            :items="filterList"
+            label="Filter"
             clearable
           ></v-autocomplete>
         </v-col>
@@ -100,7 +100,7 @@ export default {
     return {
       // Search
       searchValue: '',
-      searchBy: '',
+      filter: '',
       search: '',
       SearchList: [],
       // Report Data
@@ -154,7 +154,7 @@ export default {
     }
   },
   computed: {
-    SearchByList() {
+    filterList() {
       const list = []
       for (const i in this.headers) {
         if (this.headers[i].text !== 'Detail') {
@@ -174,8 +174,8 @@ export default {
     },
   },
   watch: {
-    searchBy() {
-      this.reportFilter(this.changeHeaderToValue(this.searchBy))
+    filter() {
+      this.reportFilter(this.changeHeaderToValue(this.filter))
     },
     search() {
       this.searchValue = this.search

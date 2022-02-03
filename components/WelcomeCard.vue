@@ -1,7 +1,9 @@
 <template>
   <v-card>
     <v-card-title class="headline">
-      <h1 style="font-weight: bold" class="mx-4 mt-10 mb-4">Hi, Chayanon.</h1>
+      <h1 style="font-weight: bold" class="mx-4 mt-10 mb-4">
+        Hi, {{ firstname }}.
+      </h1>
     </v-card-title>
     <v-card-text>
       <p class="mx-4 mt-2" style="color: black; font-size: 20px">
@@ -25,3 +27,13 @@
     </v-card-text>
   </v-card>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      firstname: 'Teerapat',
+    }
+  },
+}
+</script>

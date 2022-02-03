@@ -64,13 +64,7 @@
       </v-card-text>
     </v-form>
     <v-card-actions class="justify-center">
-      <v-btn
-        color="success"
-        class="mx-5 mb-4"
-        @click="$router.push({ name: 'Auth-login' })"
-      >
-        Sign Up
-      </v-btn>
+      <v-btn color="success" class="mx-5 mb-4" @click="signup"> Sign Up </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -101,6 +95,13 @@ export default {
       return () =>
         this.password === this.cpassword ||
         'Your password and confirm password must match'
+    },
+  },
+  methods: {
+    signup() {
+      if (this.$refs.form.validate()) {
+        this.$router.push({ path: '/Auth/login' })
+      }
     },
   },
 }

@@ -18,9 +18,6 @@
         <div class="text--primary pb-4" style="font-size: 16px">
           <b>Address:</b> &ensp;{{ item.detail }}
         </div>
-        <div class="text--primary pb-4" style="font-size: 16px">
-          <b>Location:</b> &ensp;{{ item.detail }}
-        </div>
         <div id="map-wrap" style="height: 50vh">
           <client-only>
             <l-map :zoom="18" :center="item.location">
