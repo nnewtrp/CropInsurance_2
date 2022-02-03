@@ -18,7 +18,7 @@
         <tbody>
           <tr v-for="item in SortReports.slice(0, 3)" :key="item.id">
             <td style="font-weight: bold">{{ item.id }}</td>
-            <td style="font-weight: bold">{{ silceTitle(item.title) }}</td>
+            <td style="font-weight: bold">{{ sliceTitle(item.title) }}</td>
             <td style="font-weight: bold">{{ item.date }}</td>
             <td style="font-weight: bold">
               <v-chip :color="getSColor(item.status)">
@@ -90,7 +90,7 @@ export default {
       else if (status === 'Complete') return 'success'
       else if (status === 'Cancel') return 'error'
     },
-    silceTitle(title) {
+    sliceTitle(title) {
       if (title.length < 25) return title
       else return title.slice(0, 25) + '...'
     },

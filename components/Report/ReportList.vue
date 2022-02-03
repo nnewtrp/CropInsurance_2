@@ -34,6 +34,9 @@
       :search="searchValue"
       class="elevation-1 font-weight-bold"
     >
+      <template #[`item.title`]="{ item }">
+        {{ sliceTitle(item.title) }}
+      </template>
       <template #[`item.status`]="{ item }">
         <v-chip :color="getSColor(item.status)">
           {{ item.status }}
@@ -149,7 +152,7 @@ export default {
         },
         {
           id: 4,
-          title: 'Flood',
+          title: 'Flood in my farm and it cause my work and it cause my work',
           date: '14-01-2022',
           status: 'New Case',
           cdialog: false,
@@ -186,6 +189,10 @@ export default {
       else if (status === 'In Progress') return 'warning'
       else if (status === 'Complete') return 'success'
       else if (status === 'Cancel') return 'error'
+    },
+    sliceTitle(title) {
+      if (title.length < 28) return title
+      else return title.slice(0, 28) + '...'
     },
     // Change
     ClickDetail(ReportID) {
