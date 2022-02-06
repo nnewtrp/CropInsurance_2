@@ -3,96 +3,112 @@
     "name": "Form",
     "path": "/Form",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Form\\\\index.vue",
-    "chunkName": "pages/Form/index"
+    "chunkName": "pages/Form/index",
+    "_name": "_13576eb5"
   },
   {
     "name": "Profile",
     "path": "/Profile",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Profile\\\\index.vue",
-    "chunkName": "pages/Profile/index"
+    "chunkName": "pages/Profile/index",
+    "_name": "_7269b79c"
   },
   {
     "name": "Report",
     "path": "/Report",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Report\\\\index.vue",
-    "chunkName": "pages/Report/index"
+    "chunkName": "pages/Report/index",
+    "_name": "_32860ef6"
   },
   {
     "name": "Auth-login",
     "path": "/Auth/login",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Auth\\\\login.vue",
-    "chunkName": "pages/Auth/login"
+    "chunkName": "pages/Auth/login",
+    "_name": "_1d768a68"
   },
   {
     "name": "Auth-signup",
     "path": "/Auth/signup",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Auth\\\\signup.vue",
-    "chunkName": "pages/Auth/signup"
+    "chunkName": "pages/Auth/signup",
+    "_name": "_4496a0ae"
   },
   {
     "name": "Profile-editProfile",
     "path": "/Profile/editProfile",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Profile\\\\editProfile.vue",
-    "chunkName": "pages/Profile/editProfile"
+    "chunkName": "pages/Profile/editProfile",
+    "_name": "_321089c2"
   },
   {
     "name": "Profile-password",
     "path": "/Profile/password",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Profile\\\\password.vue",
-    "chunkName": "pages/Profile/password"
+    "chunkName": "pages/Profile/password",
+    "_name": "_3a661e2a"
   },
   {
     "name": "Staff-Profile",
     "path": "/Staff/Profile",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Profile\\\\index.vue",
-    "chunkName": "pages/Staff/Profile/index"
+    "chunkName": "pages/Staff/Profile/index",
+    "_name": "_2f769470"
   },
   {
     "name": "Staff-Report",
     "path": "/Staff/Report",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Report\\\\index.vue",
-    "chunkName": "pages/Staff/Report/index"
+    "chunkName": "pages/Staff/Report/index",
+    "_name": "_02e38887"
   },
   {
     "name": "Staff-Profile-editProfile",
     "path": "/Staff/Profile/editProfile",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Profile\\\\editProfile.vue",
-    "chunkName": "pages/Staff/Profile/editProfile"
+    "chunkName": "pages/Staff/Profile/editProfile",
+    "_name": "_6d1184dd"
   },
   {
     "name": "Staff-Profile-password",
     "path": "/Staff/Profile/password",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Profile\\\\password.vue",
-    "chunkName": "pages/Staff/Profile/password"
+    "chunkName": "pages/Staff/Profile/password",
+    "_name": "_6947afed"
   },
   {
     "name": "Staff-Report-History",
     "path": "/Staff/Report/History",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Report\\\\History.vue",
-    "chunkName": "pages/Staff/Report/History"
+    "chunkName": "pages/Staff/Report/History",
+    "_name": "_3f6927e9"
   },
   {
     "name": "Staff-Report-NewReport",
     "path": "/Staff/Report/NewReport",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Report\\\\NewReport.vue",
-    "chunkName": "pages/Staff/Report/NewReport"
+    "chunkName": "pages/Staff/Report/NewReport",
+    "_name": "_2c3c8b09"
   },
   {
     "name": "Staff-Report-detail",
     "path": "/Staff/Report/:detail",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Staff\\\\Report\\\\_detail.vue",
-    "chunkName": "pages/Staff/Report/_detail"
+    "chunkName": "pages/Staff/Report/_detail",
+    "_name": "_6bc43a36"
   },
   {
     "name": "Report-detail",
     "path": "/Report/:detail",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Report\\\\_detail.vue",
-    "chunkName": "pages/Report/_detail"
+    "chunkName": "pages/Report/_detail",
+    "_name": "_1d5b4b63"
   },
   {
     "name": "index",
     "path": "/",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_f058de4e"
   }
 ]
