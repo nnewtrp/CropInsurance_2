@@ -14,14 +14,14 @@
   "AuthSignUpForm": {
     "description": "Auto imported from components/Auth/SignUpForm.vue"
   },
+  "FormReportForm": {
+    "description": "Auto imported from components/Form/ReportForm.vue"
+  },
   "NavbarAvatarMenu": {
     "description": "Auto imported from components/navbar/AvatarMenu.vue"
   },
   "NavbarStaffAvatarMenu": {
     "description": "Auto imported from components/navbar/StaffAvatarMenu.vue"
-  },
-  "FormReportForm": {
-    "description": "Auto imported from components/Form/ReportForm.vue"
   },
   "ProfileChangePassword": {
     "description": "Auto imported from components/Profile/ChangePassword.vue"
