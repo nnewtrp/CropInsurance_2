@@ -40,6 +40,20 @@
           label="Import Image/File (Optional)"
           prepend-icon="fa-paperclip"
         ></v-file-input>
+        <h2 class="pb-4">Address</h2>
+        <v-autocomplete
+          v-model="city"
+          :items="CityList"
+          :loading="isCityLoading"
+          :search-input.sync="CitySearch"
+          outlined
+          hide-no-data
+          hide-selected
+          item-text="CHANGWAT"
+          item-value="API"
+          label="City"
+          return-object
+        ></v-autocomplete>
         <h2 class="pb-2">Location</h2>
         <div id="map-wrap" style="height: 50vh">
           <client-only>
@@ -96,6 +110,7 @@ export default {
       title: '',
       detail: '',
       file: null,
+      city: '',
       // Command
       valid: true,
       isDisabled: false,
@@ -106,7 +121,49 @@ export default {
       isEdit: false,
       center: [14.069556, 100.607857],
       currentCenter: [14.069556, 100.607857],
+      // Address API
+      CityData: [],
+      isCityLoading: false,
+      CitySearch: null,
     }
+  },
+  computed: {
+    CityList() {
+      return this.CityData.map((record) => {
+        const CHANGWAT = record.CHANGWAT_E
+        return Object.assign({}, record, { CHANGWAT })
+      })
+    },
+  },
+
+  watch: {
+    CitySearch() {
+      // Items have already been loaded
+      if (this.CityList.length > 0) return
+      // Items have already been requested
+      if (this.isCityLoading) return
+      this.isCityLoading = true
+      // Lazily load input items
+      fetch(
+        'https://opend.data.go.th/get-ckan/datastore_search?resource_id=48039a2a-2f01-448c-b2a2-bb0d541dedcd',
+        {
+          method: 'GET',
+          headers: {
+            'api-key': process.env.DataGov_API_KEY,
+          },
+          redirect: 'follow',
+        }
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          const records = res.result.records
+          this.CityData = records
+        })
+        .catch((err) => {
+          window.console.log(err)
+        })
+        .finally(() => (this.isCityLoading = false))
+    },
   },
   methods: {
     submit() {
