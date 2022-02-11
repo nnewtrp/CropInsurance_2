@@ -44,13 +44,9 @@
         <v-autocomplete
           v-model="city"
           :items="CityList"
-          :loading="isCityLoading"
-          :search-input.sync="CitySearch"
           outlined
           hide-no-data
           hide-selected
-          item-text="CHANGWAT"
-          item-value="API"
           label="City"
           return-object
         ></v-autocomplete>
@@ -122,47 +118,27 @@ export default {
       center: [14.069556, 100.607857],
       currentCenter: [14.069556, 100.607857],
       // Address API
-      CityData: [],
-      isCityLoading: false,
-      CitySearch: null,
+      listdata: [],
     }
+  },
+  async fetch() {
+    const listdata = await fetch(
+      'https://opend.data.go.th/get-ckan/datastore_search?resource_id=48039a2a-2f01-448c-b2a2-bb0d541dedcd&limit=7768',
+      {
+        method: 'GET',
+        headers: {
+          'api-key': process.env.DataGov_API_KEY,
+        },
+      }
+    ).then((res) => res.json())
+    this.listdata = listdata.result.records
   },
   computed: {
     CityList() {
-      return this.CityData.map((record) => {
+      return this.listdata.map((record) => {
         const CHANGWAT = record.CHANGWAT_E
-        return Object.assign({}, record, { CHANGWAT })
+        return CHANGWAT
       })
-    },
-  },
-
-  watch: {
-    CitySearch() {
-      // Items have already been loaded
-      if (this.CityList.length > 0) return
-      // Items have already been requested
-      if (this.isCityLoading) return
-      this.isCityLoading = true
-      // Lazily load input items
-      fetch(
-        'https://opend.data.go.th/get-ckan/datastore_search?resource_id=48039a2a-2f01-448c-b2a2-bb0d541dedcd',
-        {
-          method: 'GET',
-          headers: {
-            'api-key': process.env.DataGov_API_KEY,
-          },
-          redirect: 'follow',
-        }
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          const records = res.result.records
-          this.CityData = records
-        })
-        .catch((err) => {
-          window.console.log(err)
-        })
-        .finally(() => (this.isCityLoading = false))
     },
   },
   methods: {
@@ -174,6 +150,7 @@ export default {
       } else {
         this.$vuetify.goTo(100, 1000)
       }
+      window.console.log(this.city)
     },
     send() {
       this.$router.push({

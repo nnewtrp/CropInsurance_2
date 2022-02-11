@@ -53,6 +53,11 @@ export default {
       title: 'Crop Insurance',
     }
   },
+  watch: {
+    $route() {
+      location.reload()
+    },
+  },
 }
 </script>
 

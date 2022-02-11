@@ -1,6 +1,9 @@
 <template>
   <v-app dark>
-    <h1 v-if="error.statusCode === 404">
+    <h1 v-if="$route.name === 'Form'">
+      {{ waiting }}
+    </h1>
+    <h1 v-else-if="error.statusCode === 404">
       {{ pageNotFound }}
     </h1>
     <h1 v-else>
@@ -23,6 +26,7 @@ export default {
     return {
       pageNotFound: '404 Not Found',
       otherError: 'An error occurred',
+      waiting: 'Waiting for page reloading...',
     }
   },
   head() {
