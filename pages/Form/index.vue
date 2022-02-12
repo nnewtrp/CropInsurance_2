@@ -61,13 +61,37 @@
             ></v-file-input>
             <h2 class="pb-4">Address</h2>
             <v-autocomplete
-              v-model="city"
-              :items="CityList"
+              v-model="changwat"
+              :items="changwatList"
               outlined
               hide-no-data
               hide-selected
-              label="City"
+              label="Changwat *"
               return-object
+              :rules="[rules.required]"
+              required
+            ></v-autocomplete>
+            <v-autocomplete
+              v-model="amphoe"
+              :items="amphoeList"
+              outlined
+              hide-no-data
+              hide-selected
+              label="Khet/Amphoe *"
+              return-object
+              :rules="[rules.required]"
+              required
+            ></v-autocomplete>
+            <v-autocomplete
+              v-model="tambon"
+              :items="tambonList"
+              outlined
+              hide-no-data
+              hide-selected
+              label="Khwaeng/Tambon *"
+              return-object
+              :rules="[rules.required]"
+              required
             ></v-autocomplete>
             <h2 class="pb-2">Location</h2>
             <div id="map-wrap" style="height: 50vh">
@@ -150,7 +174,9 @@ export default {
       title: '',
       detail: '',
       file: null,
-      city: '',
+      changwat: '',
+      amphoe: '',
+      tambon: '',
       // Command
       valid: true,
       isDisabled: false,
@@ -163,7 +189,8 @@ export default {
       currentCenter: [14.069556, 100.607857],
       // Address API
       listdata: [],
-      // CityList: [],
+      amphoeList: [],
+      tambonList: [],
     }
   },
   head() {
@@ -172,11 +199,31 @@ export default {
     }
   },
   computed: {
-    CityList() {
+    changwatList() {
       return this.listdata.map((record) => {
-        const CHANGWAT = record.CHANGWAT_E
+        const CHANGWAT = record.CHANGWAT_T
         return CHANGWAT
       })
+    },
+  },
+  watch: {
+    changwat() {
+      if (this.changwat !== '') {
+        this.amphoeList = this.listdata.map((record) => {
+          const AMPHOE = record.AMPHOE_T
+          if (record.CHANGWAT_T === this.changwat) return AMPHOE
+          else return ''
+        })
+      }
+    },
+    amphoe() {
+      if (this.amphoe !== '') {
+        this.tambonList = this.listdata.map((record) => {
+          const TAMBON = record.TAMBON_T
+          if (record.AMPHOE_T === this.amphoe) return TAMBON
+          else return ''
+        })
+      }
     },
   },
   methods: {
@@ -186,9 +233,8 @@ export default {
         this.$vuetify.goTo(10, 1000)
         this.isEdit = false
       } else {
-        this.$vuetify.goTo(100, 1000)
+        this.$vuetify.goTo(250, 1000)
       }
-      window.console.log(this.city)
     },
     send() {
       this.$router.push({
