@@ -30,8 +30,10 @@ export default {
     }
   },
   head() {
-    const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
+    let title = ''
+    if (this.$route.name === 'Form') title = this.waiting
+    else if (this.error.statusCode === 404) title = this.pageNotFound
+    else title = this.otherError
     return {
       title,
     }

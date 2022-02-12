@@ -7,7 +7,6 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _13576eb5 = () => interopDefault(import('..\\pages\\Form\\index.vue' /* webpackChunkName: "pages/Form/index" */))
 const _7269b79c = () => interopDefault(import('..\\pages\\Profile\\index.vue' /* webpackChunkName: "pages/Profile/index" */))
 const _32860ef6 = () => interopDefault(import('..\\pages\\Report\\index.vue' /* webpackChunkName: "pages/Report/index" */))
-const _6f076766 = () => interopDefault(import('..\\pages\\test1.vue' /* webpackChunkName: "pages/test1" */))
 const _1d768a68 = () => interopDefault(import('..\\pages\\Auth\\login.vue' /* webpackChunkName: "pages/Auth/login" */))
 const _4496a0ae = () => interopDefault(import('..\\pages\\Auth\\signup.vue' /* webpackChunkName: "pages/Auth/signup" */))
 const _321089c2 = () => interopDefault(import('..\\pages\\Profile\\editProfile.vue' /* webpackChunkName: "pages/Profile/editProfile" */))
@@ -45,10 +44,6 @@ export const routerOptions = {
     path: "/Report",
     component: _32860ef6,
     name: "Report"
-  }, {
-    path: "/test1",
-    component: _6f076766,
-    name: "test1"
   }, {
     path: "/Auth/login",
     component: _1d768a68,

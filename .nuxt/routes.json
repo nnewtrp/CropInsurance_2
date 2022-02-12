@@ -18,12 +18,6 @@
     "chunkName": "pages/Report/index"
   },
   {
-    "name": "test1",
-    "path": "/test1",
-    "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\test1.vue",
-    "chunkName": "pages/test1"
-  },
-  {
     "name": "Auth-login",
     "path": "/Auth/login",
     "component": "C:\\\\Users\\\\New\\\\Desktop\\\\CropInsurance\\\\pages\\\\Auth\\\\login.vue",

@@ -5,6 +5,12 @@
   "WelcomeCard": {
     "description": "Auto imported from components/WelcomeCard.vue"
   },
+  "NavbarAvatarMenu": {
+    "description": "Auto imported from components/navbar/AvatarMenu.vue"
+  },
+  "NavbarStaffAvatarMenu": {
+    "description": "Auto imported from components/navbar/StaffAvatarMenu.vue"
+  },
   "AuthPicture": {
     "description": "Auto imported from components/Auth/AuthPicture.vue"
   },
@@ -13,15 +19,6 @@
   },
   "AuthSignUpForm": {
     "description": "Auto imported from components/Auth/SignUpForm.vue"
-  },
-  "NavbarAvatarMenu": {
-    "description": "Auto imported from components/navbar/AvatarMenu.vue"
-  },
-  "NavbarStaffAvatarMenu": {
-    "description": "Auto imported from components/navbar/StaffAvatarMenu.vue"
-  },
-  "FormReportForm": {
-    "description": "Auto imported from components/Form/ReportForm.vue"
   },
   "ProfileChangePassword": {
     "description": "Auto imported from components/Profile/ChangePassword.vue"
@@ -47,12 +44,6 @@
   "ReportStaffReportResult": {
     "description": "Auto imported from components/Report/StaffReportResult.vue"
   },
-  "StaffEditProfile": {
-    "description": "Auto imported from components/Staff/Profile/StaffEditProfile.vue"
-  },
-  "StaffProfile": {
-    "description": "Auto imported from components/Staff/Profile/StaffProfile.vue"
-  },
   "StaffReportHistoryList": {
     "description": "Auto imported from components/Staff/Report/HistoryList.vue"
   },
@@ -64,5 +55,11 @@
   },
   "StaffReportNewReportList": {
     "description": "Auto imported from components/Staff/Report/NewReportList.vue"
+  },
+  "StaffEditProfile": {
+    "description": "Auto imported from components/Staff/Profile/StaffEditProfile.vue"
+  },
+  "StaffProfile": {
+    "description": "Auto imported from components/Staff/Profile/StaffProfile.vue"
   }
 }

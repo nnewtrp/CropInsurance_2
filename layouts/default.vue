@@ -55,7 +55,7 @@ export default {
   },
   watch: {
     $route() {
-      location.reload()
+      if (this.$route.name === 'Form') location.reload()
     },
   },
 }
