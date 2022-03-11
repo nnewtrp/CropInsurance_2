@@ -7,6 +7,17 @@
         &ensp;User Information
       </v-card-title>
       <v-card-text class="subheading">
+        <v-radio-group
+          v-model="nametitle"
+          label="Name Title *"
+          row
+          :rules="[rules.required]"
+          required
+        >
+          <v-radio label="Mr." color="blue" value="Mr."></v-radio>
+          <v-radio label="Ms." color="pink" value="Ms."></v-radio>
+          <v-radio label="Mrs." color="pink" value="Mrs."></v-radio>
+        </v-radio-group>
         <v-row wrap>
           <v-col cols="12" xs="12" sm="6" md="6">
             <v-text-field
@@ -25,31 +36,45 @@
             ></v-text-field>
           </v-col>
         </v-row>
-        <v-text-field
-          v-model="username"
-          label="Userame *"
-          :rules="[rules.required, rules.usernameLength]"
-          :counter="25"
-          prefix="@"
-          required
-        ></v-text-field>
-        <v-radio-group
-          v-model="gender"
-          label="Gender *"
-          row
+      </v-card-text>
+      <v-card-title class="headline">
+        <v-icon color="black">fa-map-marker</v-icon>
+        &ensp;Address
+      </v-card-title>
+      <v-card-text class="subheading">
+        <v-autocomplete
+          v-model="province"
+          :items="provinceList"
+          outlined
+          hide-no-data
+          hide-selected
+          label="Province *"
+          return-object
           :rules="[rules.required]"
           required
-        >
-          <v-radio label="Male" color="blue" value="Male"></v-radio>
-          <v-radio label="Female" color="pink" value="Female"></v-radio>
-        </v-radio-group>
-        <v-file-input
-          v-model="image"
-          chips
-          accept="image/*"
-          label="Picture"
-          prepend-icon="fa-portrait"
-        ></v-file-input>
+        ></v-autocomplete>
+        <v-autocomplete
+          v-model="district"
+          :items="districtList"
+          outlined
+          hide-no-data
+          hide-selected
+          label="District *"
+          return-object
+          :rules="[rules.required]"
+          required
+        ></v-autocomplete>
+        <v-autocomplete
+          v-model="subDistrict"
+          :items="subDistrictList"
+          outlined
+          hide-no-data
+          hide-selected
+          label="Sub-District *"
+          return-object
+          :rules="[rules.required]"
+          required
+        ></v-autocomplete>
       </v-card-text>
       <v-card-title class="headline">
         <v-icon color="black">fa-address-card</v-icon>
@@ -89,11 +114,12 @@ export default {
     return {
       // User Data
       uid: '1',
+      nametitle: 'Mr.',
       firstname: 'Teerapat',
       lastname: 'Satitporn',
-      username: 'newtrp',
-      gender: 'Male',
-      image: null,
+      province: '',
+      district: '',
+      subDistrict: '',
       email: 'example@gmail.com',
       phone: '0802534473',
       // Command
@@ -111,6 +137,10 @@ export default {
           (value && value.length <= 25) ||
           'Username must be less that 25 characters',
       },
+      // Address API
+      listdata: [],
+      districtList: [],
+      subDistrictList: [],
     }
   },
   methods: {

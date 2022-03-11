@@ -51,11 +51,12 @@ export default {
   data() {
     return {
       title: 'Crop Insurance',
+      needReloading: ['Form', 'Profile-editProfile'],
     }
   },
   watch: {
     $route() {
-      if (this.$route.name === 'Form') location.reload()
+      if (this.needReloading.includes(this.$route.name)) location.reload()
     },
   },
 }

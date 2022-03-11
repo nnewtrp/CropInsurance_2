@@ -29,7 +29,13 @@ export default {
   data() {
     return {
       title: 'Crop Insurance',
+      needReloading: ['Staff-Profile-editProfile'],
     }
+  },
+  watch: {
+    $route() {
+      if (this.needReloading.includes(this.$route.name)) location.reload()
+    },
   },
 }
 </script>

@@ -61,34 +61,34 @@
             ></v-file-input>
             <h2 class="pb-4">Address</h2>
             <v-autocomplete
-              v-model="changwat"
-              :items="changwatList"
+              v-model="province"
+              :items="provinceList"
               outlined
               hide-no-data
               hide-selected
-              label="Changwat *"
+              label="Province *"
               return-object
               :rules="[rules.required]"
               required
             ></v-autocomplete>
             <v-autocomplete
-              v-model="amphoe"
-              :items="amphoeList"
+              v-model="district"
+              :items="districtList"
               outlined
               hide-no-data
               hide-selected
-              label="Khet/Amphoe *"
+              label="District *"
               return-object
               :rules="[rules.required]"
               required
             ></v-autocomplete>
             <v-autocomplete
-              v-model="tambon"
-              :items="tambonList"
+              v-model="subDistrict"
+              :items="subDistrictList"
               outlined
               hide-no-data
               hide-selected
-              label="Khwaeng/Tambon *"
+              label="Sub-District *"
               return-object
               :rules="[rules.required]"
               required
@@ -170,13 +170,13 @@ export default {
   data() {
     return {
       // Data
-      name: 'Teerapat Satitporn',
+      name: 'Mr. Teerapat Satitporn',
       title: '',
       detail: '',
       file: null,
-      changwat: '',
-      amphoe: '',
-      tambon: '',
+      province: 'กรุงเทพมหานคร',
+      district: 'เขต บางรัก',
+      subDistrict: 'แขวง สีลม',
       // Command
       valid: true,
       isDisabled: false,
@@ -189,8 +189,6 @@ export default {
       currentCenter: [14.069556, 100.607857],
       // Address API
       listdata: [],
-      amphoeList: [],
-      tambonList: [],
     }
   },
   head() {
@@ -199,28 +197,50 @@ export default {
     }
   },
   computed: {
-    changwatList() {
+    provinceList() {
       return this.listdata.map((record) => {
         const CHANGWAT = record.CHANGWAT_T
         return CHANGWAT
       })
     },
+    districtList() {
+      if (this.province !== '') {
+        return this.listdata.map((record) => {
+          const AMPHOE = record.AMPHOE_T
+          if (record.CHANGWAT_T === this.province) return AMPHOE
+          else return ''
+        })
+      } else {
+        return []
+      }
+    },
+    subDistrictList() {
+      if (this.district !== '') {
+        return this.listdata.map((record) => {
+          const TAMBON = record.TAMBON_T
+          if (record.AMPHOE_T === this.district) return TAMBON
+          else return ''
+        })
+      } else {
+        return []
+      }
+    },
   },
   watch: {
-    changwat() {
-      if (this.changwat !== '') {
-        this.amphoeList = this.listdata.map((record) => {
+    province() {
+      if (this.province !== '') {
+        this.districtList = this.listdata.map((record) => {
           const AMPHOE = record.AMPHOE_T
-          if (record.CHANGWAT_T === this.changwat) return AMPHOE
+          if (record.CHANGWAT_T === this.province) return AMPHOE
           else return ''
         })
       }
     },
-    amphoe() {
-      if (this.amphoe !== '') {
-        this.tambonList = this.listdata.map((record) => {
+    district() {
+      if (this.district !== '') {
+        this.subDistrictList = this.listdata.map((record) => {
           const TAMBON = record.TAMBON_T
-          if (record.AMPHOE_T === this.amphoe) return TAMBON
+          if (record.AMPHOE_T === this.district) return TAMBON
           else return ''
         })
       }

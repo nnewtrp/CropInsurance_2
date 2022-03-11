@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <h1 v-if="$route.name === 'Form'">
+    <h1 v-if="needReloading.includes($route.name)">
       {{ waiting }}
     </h1>
     <h1 v-else-if="error.statusCode === 404">
@@ -27,11 +27,16 @@ export default {
       pageNotFound: '404 Not Found',
       otherError: 'An error occurred',
       waiting: 'Waiting for page reloading...',
+      needReloading: [
+        'Form',
+        'Profile-editProfile',
+        'Staff-Profile-editProfile',
+      ],
     }
   },
   head() {
     let title = ''
-    if (this.$route.name === 'Form') title = this.waiting
+    if (this.needReloading.includes(this.$route.name)) title = this.waiting
     else if (this.error.statusCode === 404) title = this.pageNotFound
     else title = this.otherError
     return {
