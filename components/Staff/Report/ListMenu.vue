@@ -11,7 +11,7 @@
           >
             <v-card-title
               class="font-weight-bold justify-center"
-              style="font-size: 19px"
+              style="font-size: 18px"
             >
               {{ item.title }}&nbsp;
             </v-card-title>
