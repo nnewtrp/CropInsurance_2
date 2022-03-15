@@ -14,12 +14,6 @@
   "AuthSignUpForm": {
     "description": "Auto imported from components/Auth/SignUpForm.vue"
   },
-  "NavbarAvatarMenu": {
-    "description": "Auto imported from components/navbar/AvatarMenu.vue"
-  },
-  "NavbarStaffAvatarMenu": {
-    "description": "Auto imported from components/navbar/StaffAvatarMenu.vue"
-  },
   "ProfileChangePassword": {
     "description": "Auto imported from components/Profile/ChangePassword.vue"
   },
@@ -28,6 +22,12 @@
   },
   "ProfileUserProfile": {
     "description": "Auto imported from components/Profile/UserProfile.vue"
+  },
+  "NavbarAvatarMenu": {
+    "description": "Auto imported from components/navbar/AvatarMenu.vue"
+  },
+  "NavbarStaffAvatarMenu": {
+    "description": "Auto imported from components/navbar/StaffAvatarMenu.vue"
   },
   "ReportComment": {
     "description": "Auto imported from components/Report/ReportComment.vue"

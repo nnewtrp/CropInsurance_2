@@ -127,24 +127,13 @@
 <script>
 export default {
   layout: 'Staff',
-  async asyncData({ $axios }) {
-    const { data } = await $axios.get(
-      'https://opend.data.go.th/get-ckan/datastore_search?resource_id=48039a2a-2f01-448c-b2a2-bb0d541dedcd&limit=7768',
-      {
-        headers: {
-          'api-key': process.env.DataGov_API_KEY,
-        },
-      }
-    )
-    return { listdata: data.result.records }
-  },
   data() {
     return {
       // User Data
       uid: '1',
       nametitle: 'Mr.',
-      firstname: 'Teerapat',
-      lastname: 'Satitporn',
+      firstname: 'Chayanon',
+      lastname: 'Noisapung',
       province: 'กรุงเทพมหานคร',
       district: 'เขต บางรัก',
       subDistrict: 'แขวง สีลม',

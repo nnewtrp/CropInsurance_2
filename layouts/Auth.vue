@@ -21,7 +21,7 @@
         <v-icon right>fas fa-sign-in-alt</v-icon>
       </v-btn>
     </v-app-bar>
-    <v-row wrap>
+    <v-row v-if="$route.name === 'Auth-login'" wrap>
       <v-col cols="12" md="7" lg="7" class="white pt-15 d-none d-md-block">
         <AuthPicture />
       </v-col>
@@ -33,6 +33,11 @@
         </v-main>
       </v-col>
     </v-row>
+    <v-main v-else>
+      <v-container>
+        <Nuxt />
+      </v-container>
+    </v-main>
     <v-footer class="primary">
       <span style="color: white">
         Crop Insurance System &copy; {{ new Date().getFullYear() }}
