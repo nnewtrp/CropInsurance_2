@@ -14,14 +14,14 @@
       <v-col cols="12" sm="8" md="8" class="px-6">
         <v-card-title class="headline">
           <v-icon color="black">fa-user</v-icon>
-          &ensp;User Information
+          &ensp;Staff Information
         </v-card-title>
         <v-card-text class="subheading">
           <div class="text--primary pb-4">
             <strong>Name:</strong> &ensp;{{ firstname }} {{ lastname }}
           </div>
           <div class="text--primary pb-4">
-            <strong>Address:</strong> &ensp;{{ address }}
+            <strong>Workplace:</strong> &ensp;{{ workplace }}
           </div>
         </v-card-text>
         <v-card-title class="headline">
@@ -41,10 +41,7 @@
       </v-col>
     </v-layout>
     <v-card-actions class="justify-center">
-      <v-btn
-        color="error"
-        @click="$router.push({ name: 'Staff-Profile-editProfile' })"
-      >
+      <v-btn color="error" href="/Profile/editProfile">
         Edit Profile
         <v-icon right>fa-user-edit</v-icon>
       </v-btn>
@@ -59,7 +56,7 @@ export default {
       uid: '2',
       firstname: 'Chayanon',
       lastname: 'Noisapung',
-      address: 'Khlong Luang District, Pathumtani',
+      workplace: 'Head Office',
       email: 'example@gmail.com',
       phone: '0802534473',
     }

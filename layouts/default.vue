@@ -7,7 +7,7 @@
         text
         color="white"
         class="mr-2 hidden-xs-only"
-        to="/Form"
+        href="/Form"
         depressed
         rounded
       >

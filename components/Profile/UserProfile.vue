@@ -41,10 +41,7 @@
       </v-col>
     </v-layout>
     <v-card-actions class="justify-center">
-      <v-btn
-        color="error"
-        @click="$router.push({ name: 'Profile-editProfile' })"
-      >
+      <v-btn color="error" href="/Profile/editProfile">
         Edit Profile
         <v-icon right>fa-user-edit</v-icon>
       </v-btn>

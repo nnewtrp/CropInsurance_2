@@ -4,7 +4,7 @@
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-card-title class="headline">
         <v-icon color="black">fa-user</v-icon>
-        &ensp;User Information
+        &ensp;Staff Information
       </v-card-title>
       <v-card-text class="subheading">
         <v-radio-group
@@ -39,38 +39,16 @@
       </v-card-text>
       <v-card-title class="headline">
         <v-icon color="black">fa-location-dot</v-icon>
-        &ensp;Address
+        &ensp;Staff Workplace
       </v-card-title>
       <v-card-text class="subheading">
         <v-autocomplete
-          v-model="province"
-          :items="provinceList"
+          v-model="workplace"
+          :items="workplaceList"
           outlined
           hide-no-data
           hide-selected
-          label="Province *"
-          return-object
-          :rules="[rules.required]"
-          required
-        ></v-autocomplete>
-        <v-autocomplete
-          v-model="district"
-          :items="districtList"
-          outlined
-          hide-no-data
-          hide-selected
-          label="District *"
-          return-object
-          :rules="[rules.required]"
-          required
-        ></v-autocomplete>
-        <v-autocomplete
-          v-model="subDistrict"
-          :items="subDistrictList"
-          outlined
-          hide-no-data
-          hide-selected
-          label="Sub-District *"
+          label="Workplace *"
           return-object
           :rules="[rules.required]"
           required
@@ -123,12 +101,11 @@ export default {
       nametitle: 'Mr.',
       firstname: 'Chayanon',
       lastname: 'Noisapung',
-      province: 'กรุงเทพมหานคร',
-      district: 'เขต บางรัก',
-      subDistrict: 'แขวง สีลม',
+      workplace: 'Head Office',
       email: 'example@gmail.com',
       phone: '0802534473',
       // Command
+      workplaceList: ['Head Office', 'Branch 1', 'Branch 2', 'Branch 3'],
       valid: true,
       rules: {
         required: (value) => !!value || 'This field is required.',
@@ -144,56 +121,6 @@ export default {
           'Username must be less that 25 characters',
       },
     }
-  },
-  computed: {
-    provinceList() {
-      return this.listdata.map((record) => {
-        const CHANGWAT = record.CHANGWAT_T
-        return CHANGWAT
-      })
-    },
-    districtList() {
-      if (this.province !== '') {
-        return this.listdata.map((record) => {
-          const AMPHOE = record.AMPHOE_T
-          if (record.CHANGWAT_T === this.province) return AMPHOE
-          else return ''
-        })
-      } else {
-        return []
-      }
-    },
-    subDistrictList() {
-      if (this.district !== '') {
-        return this.listdata.map((record) => {
-          const TAMBON = record.TAMBON_T
-          if (record.AMPHOE_T === this.district) return TAMBON
-          else return ''
-        })
-      } else {
-        return []
-      }
-    },
-  },
-  watch: {
-    province() {
-      if (this.province !== '') {
-        this.districtList = this.listdata.map((record) => {
-          const AMPHOE = record.AMPHOE_T
-          if (record.CHANGWAT_T === this.province) return AMPHOE
-          else return ''
-        })
-      }
-    },
-    district() {
-      if (this.district !== '') {
-        this.subDistrictList = this.listdata.map((record) => {
-          const TAMBON = record.TAMBON_T
-          if (record.AMPHOE_T === this.district) return TAMBON
-          else return ''
-        })
-      }
-    },
   },
   methods: {
     save() {

@@ -12,12 +12,7 @@
       </p>
     </v-card-text>
     <v-card-actions>
-      <v-btn
-        large
-        color="primary"
-        class="mx-5 mt-2"
-        @click="$router.push({ name: 'Form' })"
-      >
+      <v-btn large color="primary" class="mx-5 mt-2" href="/Form">
         New Report
         <v-icon color="white" right>fa-arrow-right</v-icon>
       </v-btn>

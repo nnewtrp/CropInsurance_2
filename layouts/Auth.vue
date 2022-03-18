@@ -7,7 +7,7 @@
         color="white"
         class="mr-2 hidden-xs-only"
         depressed
-        @click="$router.push({ name: 'Auth-signup' })"
+        href="/Auth/signup"
       >
         Sign Up
       </v-btn>

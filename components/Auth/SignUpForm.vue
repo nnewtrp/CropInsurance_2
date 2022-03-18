@@ -11,7 +11,7 @@
         &nbsp;Up: Step 1
       </h2>
     </v-card-title>
-    <v-form ref="form">
+    <v-form ref="form1" v-model="Valid1" lazy-validation>
       <v-card-text>
         <h2 class="ml-1">User Information</h2>
         <v-radio-group
@@ -87,7 +87,14 @@
       </v-card-text>
     </v-form>
     <v-card-actions class="justify-center">
-      <v-btn color="success" class="mx-5 mb-4" @click="next"> Next </v-btn>
+      <v-btn
+        color="success"
+        class="mx-5 mb-4"
+        :disabled="!Valid1"
+        @click="next"
+      >
+        Next
+      </v-btn>
     </v-card-actions>
   </v-card>
   <v-card v-else-if="step === 2" class="white">
@@ -102,7 +109,7 @@
         &nbsp;Up: Step 2
       </h2>
     </v-card-title>
-    <v-form ref="form">
+    <v-form ref="form2" v-model="Valid2" lazy-validation>
       <v-card-text>
         <h2 class="pb-4">Address</h2>
         <v-autocomplete
@@ -154,7 +161,14 @@
       </v-card-text>
     </v-form>
     <v-card-actions class="justify-center">
-      <v-btn color="success" class="mx-5 mb-4" @click="signup"> Sign Up </v-btn>
+      <v-btn
+        color="success"
+        class="mx-5 mb-4"
+        :disabled="!Valid2"
+        @click="signup"
+      >
+        Sign Up
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -195,7 +209,9 @@ export default {
       },
       Logo: false,
       cLogo: false,
-      step: 2,
+      step: 1,
+      Valid1: true,
+      Valid2: true,
       // Map
       isEdit: false,
       center: [14.069556, 100.607857],
@@ -260,14 +276,15 @@ export default {
   },
   methods: {
     next() {
-      if (this.$refs.form.validate()) {
+      if (this.$refs.form1.validate()) {
         this.step++
+        this.$vuetify.goTo(0, 1000)
       } else {
         this.$vuetify.goTo(100, 1000)
       }
     },
     signup() {
-      if (this.$refs.form.validate()) {
+      if (this.$refs.form2.validate()) {
         this.$router.push({ path: '/Auth/login' })
       } else {
         this.$vuetify.goTo(100, 1000)
