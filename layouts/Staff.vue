@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       title: 'Crop Insurance',
-      needReloading: [],
+      needReloading: ['Staff-Profile-editProfile'],
     }
   },
   watch: {

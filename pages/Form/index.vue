@@ -11,151 +11,18 @@
       Home
     </v-btn>
     <v-col cols="12" sm="12" md="10" class="my-8">
-      <v-card class="pa-3">
-        <v-card-title v-if="isDisabled == false" class="text-h4 justify-left">
-          <div class="text-decoration-underline font-weight-bold">
-            New Report
-          </div>
-        </v-card-title>
-        <v-card-title v-if="isDisabled == true" class="text-h4 justify-left">
-          <div class="text-decoration-underline font-weight-bold">
-            Submit Report
-          </div>
-        </v-card-title>
-        <v-form
-          ref="form"
-          v-model="valid"
-          :disabled="isDisabled"
-          lazy-validation
-        >
-          <v-card-text class="subheading">
-            <v-text-field
-              v-model="name"
-              label="Full Name *"
-              outlined
-              :rules="[rules.required]"
-              readonly
-              required
-            ></v-text-field>
-            <v-text-field
-              v-model="title"
-              label="Title *"
-              outlined
-              :rules="[rules.required]"
-              required
-            ></v-text-field>
-            <v-textarea
-              v-model="detail"
-              label="Report Detail *"
-              outlined
-              :rules="[rules.required]"
-              required
-            ></v-textarea>
-            <v-file-input
-              v-model="file"
-              chips
-              multiple
-              outlined
-              label="Import Image/File (Optional)"
-              prepend-icon="fa-paperclip"
-            ></v-file-input>
-            <h2 class="pb-4">Address</h2>
-            <v-autocomplete
-              v-model="province"
-              :items="provinceList"
-              outlined
-              hide-no-data
-              hide-selected
-              label="Province *"
-              return-object
-              :rules="[rules.required]"
-              required
-            ></v-autocomplete>
-            <v-autocomplete
-              v-model="district"
-              :items="districtList"
-              outlined
-              hide-no-data
-              hide-selected
-              label="District *"
-              return-object
-              :rules="[rules.required]"
-              required
-            ></v-autocomplete>
-            <v-autocomplete
-              v-model="subDistrict"
-              :items="subDistrictList"
-              outlined
-              hide-no-data
-              hide-selected
-              label="Sub-District *"
-              return-object
-              :rules="[rules.required]"
-              required
-            ></v-autocomplete>
-            <h2 class="pb-2">Location</h2>
-            <div id="map-wrap" style="height: 50vh">
-              <client-only>
-                <l-map
-                  :zoom="13"
-                  :center="center"
-                  @update:center="centerUpdate"
-                >
-                  <l-tile-layer
-                    url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
-                  ></l-tile-layer>
-                  <l-marker :lat-lng="currentCenter">
-                    <l-popup> Marker at {{ currentCenter }}</l-popup>
-                  </l-marker>
-                </l-map>
-              </client-only>
-            </div>
-            <v-card-actions v-if="isEdit == false">
-              <v-spacer />
-              <v-btn
-                color="error"
-                :disabled="isDisabled"
-                @click="isEdit = true"
-              >
-                Edit Location
-                <v-icon right>fa-pencil-alt</v-icon>
-              </v-btn>
-            </v-card-actions>
-            <v-card-actions v-else>
-              <v-spacer />
-              <v-btn
-                color="success"
-                :disabled="isDisabled"
-                @click="isEdit = false"
-              >
-                Save Location
-                <v-icon right>fa-save</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card-text>
-          <v-card-actions v-if="isDisabled == false" class="justify-center">
-            <v-btn :disabled="!valid" color="success" @click="submit">
-              Submit
-            </v-btn>
-          </v-card-actions>
-          <v-card-actions v-else class="justify-center">
-            <v-btn color="error" @click="isDisabled = false">
-              Edit
-              <v-icon right>fa-pencil-alt</v-icon>
-            </v-btn>
-            <v-btn color="primary" @click="send">
-              Send
-              <v-icon right>fa-paper-plane</v-icon>
-            </v-btn>
-          </v-card-actions>
-        </v-form>
-      </v-card>
+      <ReportForm :listdata="listdata" />
     </v-col>
   </v-layout>
 </template>
 
 <script>
+import ReportForm from '~/components/Form/ReportForm.vue'
+
 export default {
+  components: {
+    ReportForm,
+  },
   async asyncData({ $axios }) {
     const { data } = await $axios.get(
       'https://opend.data.go.th/get-ckan/datastore_search?resource_id=48039a2a-2f01-448c-b2a2-bb0d541dedcd&limit=7768',
@@ -169,24 +36,6 @@ export default {
   },
   data() {
     return {
-      // Data
-      name: 'Mr. Teerapat Satitporn',
-      title: '',
-      detail: '',
-      file: null,
-      province: 'กรุงเทพมหานคร',
-      district: 'เขต บางรัก',
-      subDistrict: 'แขวง สีลม',
-      // Command
-      valid: true,
-      isDisabled: false,
-      rules: {
-        required: (value) => !!value || 'This field is required.',
-      },
-      // Map
-      isEdit: false,
-      center: [14.069556, 100.607857],
-      currentCenter: [14.069556, 100.607857],
       // Address API
       listdata: [],
     }
@@ -195,78 +44,6 @@ export default {
     return {
       title: 'New Report',
     }
-  },
-  computed: {
-    provinceList() {
-      return this.listdata.map((record) => {
-        const CHANGWAT = record.CHANGWAT_T
-        return CHANGWAT
-      })
-    },
-    districtList() {
-      if (this.province !== '') {
-        return this.listdata.map((record) => {
-          const AMPHOE = record.AMPHOE_T
-          if (record.CHANGWAT_T === this.province) return AMPHOE
-          else return ''
-        })
-      } else {
-        return []
-      }
-    },
-    subDistrictList() {
-      if (this.district !== '') {
-        return this.listdata.map((record) => {
-          const TAMBON = record.TAMBON_T
-          if (record.AMPHOE_T === this.district) return TAMBON
-          else return ''
-        })
-      } else {
-        return []
-      }
-    },
-  },
-  watch: {
-    province() {
-      if (this.province !== '') {
-        this.districtList = this.listdata.map((record) => {
-          const AMPHOE = record.AMPHOE_T
-          if (record.CHANGWAT_T === this.province) return AMPHOE
-          else return ''
-        })
-      }
-    },
-    district() {
-      if (this.district !== '') {
-        this.subDistrictList = this.listdata.map((record) => {
-          const TAMBON = record.TAMBON_T
-          if (record.AMPHOE_T === this.district) return TAMBON
-          else return ''
-        })
-      }
-    },
-  },
-  methods: {
-    submit() {
-      if (this.$refs.form.validate()) {
-        this.isDisabled = true
-        this.$vuetify.goTo(10, 1000)
-        this.isEdit = false
-      } else {
-        this.$vuetify.goTo(250, 1000)
-      }
-    },
-    send() {
-      this.$router.push({
-        name: 'index',
-      })
-    },
-    // Map
-    centerUpdate(center) {
-      if (this.isEdit === true) {
-        this.currentCenter = center
-      }
-    },
   },
 }
 </script>

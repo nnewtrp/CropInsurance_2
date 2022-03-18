@@ -38,7 +38,7 @@
         </v-row>
       </v-card-text>
       <v-card-title class="headline">
-        <v-icon color="black">fa-map-marker</v-icon>
+        <v-icon color="black">fa-location-dot</v-icon>
         &ensp;Address
       </v-card-title>
       <v-card-text class="subheading">
@@ -110,6 +110,12 @@
 
 <script>
 export default {
+  props: {
+    listdata: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
       // User Data
@@ -117,9 +123,9 @@ export default {
       nametitle: 'Mr.',
       firstname: 'Teerapat',
       lastname: 'Satitporn',
-      province: '',
-      district: '',
-      subDistrict: '',
+      province: 'กรุงเทพมหานคร',
+      district: 'เขต บางรัก',
+      subDistrict: 'แขวง สีลม',
       email: 'example@gmail.com',
       phone: '0802534473',
       // Command
@@ -137,11 +143,57 @@ export default {
           (value && value.length <= 25) ||
           'Username must be less that 25 characters',
       },
-      // Address API
-      listdata: [],
-      districtList: [],
-      subDistrictList: [],
     }
+  },
+  computed: {
+    provinceList() {
+      return this.listdata.map((record) => {
+        const CHANGWAT = record.CHANGWAT_T
+        return CHANGWAT
+      })
+    },
+    districtList() {
+      if (this.province !== '') {
+        return this.listdata.map((record) => {
+          const AMPHOE = record.AMPHOE_T
+          if (record.CHANGWAT_T === this.province) return AMPHOE
+          else return ''
+        })
+      } else {
+        return []
+      }
+    },
+    subDistrictList() {
+      if (this.district !== '') {
+        return this.listdata.map((record) => {
+          const TAMBON = record.TAMBON_T
+          if (record.AMPHOE_T === this.district) return TAMBON
+          else return ''
+        })
+      } else {
+        return []
+      }
+    },
+  },
+  watch: {
+    province() {
+      if (this.province !== '') {
+        this.districtList = this.listdata.map((record) => {
+          const AMPHOE = record.AMPHOE_T
+          if (record.CHANGWAT_T === this.province) return AMPHOE
+          else return ''
+        })
+      }
+    },
+    district() {
+      if (this.district !== '') {
+        this.subDistrictList = this.listdata.map((record) => {
+          const TAMBON = record.TAMBON_T
+          if (record.AMPHOE_T === this.district) return TAMBON
+          else return ''
+        })
+      }
+    },
   },
   methods: {
     save() {

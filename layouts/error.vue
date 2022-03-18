@@ -31,6 +31,7 @@ export default {
         'Form',
         'Profile-editProfile',
         'Staff-Profile-editProfile',
+        'Auth-signup',
       ],
     }
   },

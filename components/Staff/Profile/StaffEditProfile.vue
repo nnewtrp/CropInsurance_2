@@ -1,12 +1,23 @@
 <template>
   <v-card class="pa-3">
-    <v-card-title class="text-h4 justify-center"> Edit Profile </v-card-title>
+    <v-card-title class="text-h4 justify-center">Edit Profile</v-card-title>
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-card-title class="headline">
         <v-icon color="black">fa-user</v-icon>
         &ensp;User Information
       </v-card-title>
       <v-card-text class="subheading">
+        <v-radio-group
+          v-model="nametitle"
+          label="Name Title *"
+          row
+          :rules="[rules.required]"
+          required
+        >
+          <v-radio label="Mr." color="blue" value="Mr."></v-radio>
+          <v-radio label="Ms." color="pink" value="Ms."></v-radio>
+          <v-radio label="Mrs." color="pink" value="Mrs."></v-radio>
+        </v-radio-group>
         <v-row wrap>
           <v-col cols="12" xs="12" sm="6" md="6">
             <v-text-field
@@ -25,31 +36,45 @@
             ></v-text-field>
           </v-col>
         </v-row>
-        <v-text-field
-          v-model="username"
-          label="Userame *"
-          :rules="[rules.required, rules.usernameLength]"
-          :counter="25"
-          prefix="@"
-          required
-        ></v-text-field>
-        <v-radio-group
-          v-model="gender"
-          label="Gender *"
-          row
+      </v-card-text>
+      <v-card-title class="headline">
+        <v-icon color="black">fa-location-dot</v-icon>
+        &ensp;Address
+      </v-card-title>
+      <v-card-text class="subheading">
+        <v-autocomplete
+          v-model="province"
+          :items="provinceList"
+          outlined
+          hide-no-data
+          hide-selected
+          label="Province *"
+          return-object
           :rules="[rules.required]"
           required
-        >
-          <v-radio label="Male" color="blue" value="Male"></v-radio>
-          <v-radio label="Female" color="pink" value="Female"></v-radio>
-        </v-radio-group>
-        <v-file-input
-          v-model="image"
-          chips
-          accept="image/*"
-          label="Picture"
-          prepend-icon="fa-portrait"
-        ></v-file-input>
+        ></v-autocomplete>
+        <v-autocomplete
+          v-model="district"
+          :items="districtList"
+          outlined
+          hide-no-data
+          hide-selected
+          label="District *"
+          return-object
+          :rules="[rules.required]"
+          required
+        ></v-autocomplete>
+        <v-autocomplete
+          v-model="subDistrict"
+          :items="subDistrictList"
+          outlined
+          hide-no-data
+          hide-selected
+          label="Sub-District *"
+          return-object
+          :rules="[rules.required]"
+          required
+        ></v-autocomplete>
       </v-card-text>
       <v-card-title class="headline">
         <v-icon color="black">fa-address-card</v-icon>
@@ -85,15 +110,22 @@
 
 <script>
 export default {
+  props: {
+    listdata: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
       // User Data
       uid: '1',
+      nametitle: 'Mr.',
       firstname: 'Chayanon',
       lastname: 'Noisapung',
-      username: 'chayanxnc',
-      gender: 'Male',
-      image: null,
+      province: 'กรุงเทพมหานคร',
+      district: 'เขต บางรัก',
+      subDistrict: 'แขวง สีลม',
       email: 'example@gmail.com',
       phone: '0802534473',
       // Command
@@ -112,6 +144,56 @@ export default {
           'Username must be less that 25 characters',
       },
     }
+  },
+  computed: {
+    provinceList() {
+      return this.listdata.map((record) => {
+        const CHANGWAT = record.CHANGWAT_T
+        return CHANGWAT
+      })
+    },
+    districtList() {
+      if (this.province !== '') {
+        return this.listdata.map((record) => {
+          const AMPHOE = record.AMPHOE_T
+          if (record.CHANGWAT_T === this.province) return AMPHOE
+          else return ''
+        })
+      } else {
+        return []
+      }
+    },
+    subDistrictList() {
+      if (this.district !== '') {
+        return this.listdata.map((record) => {
+          const TAMBON = record.TAMBON_T
+          if (record.AMPHOE_T === this.district) return TAMBON
+          else return ''
+        })
+      } else {
+        return []
+      }
+    },
+  },
+  watch: {
+    province() {
+      if (this.province !== '') {
+        this.districtList = this.listdata.map((record) => {
+          const AMPHOE = record.AMPHOE_T
+          if (record.CHANGWAT_T === this.province) return AMPHOE
+          else return ''
+        })
+      }
+    },
+    district() {
+      if (this.district !== '') {
+        this.subDistrictList = this.listdata.map((record) => {
+          const TAMBON = record.TAMBON_T
+          if (record.AMPHOE_T === this.district) return TAMBON
+          else return ''
+        })
+      }
+    },
   },
   methods: {
     save() {

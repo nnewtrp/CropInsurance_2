@@ -57,7 +57,13 @@ export default {
   data() {
     return {
       title: 'Crop Insurance',
+      needReloading: ['Auth-signup'],
     }
+  },
+  watch: {
+    $route() {
+      if (this.needReloading.includes(this.$route.name)) location.reload()
+    },
   },
 }
 </script>
