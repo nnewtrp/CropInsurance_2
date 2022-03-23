@@ -22,7 +22,7 @@
           <client-only>
             <l-map :zoom="18" :center="item.location">
               <l-tile-layer
-                url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               ></l-tile-layer>
               <l-marker :lat-lng="item.location">
                 <l-popup> Marker at {{ item.location }}</l-popup>

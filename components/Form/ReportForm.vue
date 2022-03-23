@@ -77,9 +77,9 @@
         <h2 class="pb-2">Location</h2>
         <div id="map-wrap" style="height: 50vh">
           <client-only>
-            <l-map :zoom="13" :center="center" @update:center="centerUpdate">
+            <l-map :zoom="18" :center="center" @update:center="centerUpdate">
               <l-tile-layer
-                url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               ></l-tile-layer>
               <l-marker :lat-lng="currentCenter">
                 <l-popup> Marker at {{ currentCenter }}</l-popup>
