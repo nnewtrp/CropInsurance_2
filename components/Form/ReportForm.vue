@@ -77,7 +77,7 @@
         <h2 class="pb-2">Location</h2>
         <div id="map-wrap" style="height: 50vh">
           <client-only>
-            <l-map :zoom="18" :center="center" @update:center="centerUpdate">
+            <l-map :zoom="16" :center="center" @update:center="centerUpdate">
               <l-tile-layer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               ></l-tile-layer>
@@ -96,6 +96,21 @@
         </v-card-actions>
         <v-card-actions v-else>
           <v-spacer />
+          <v-tooltip bottom open-delay="200">
+            <template #activator="{ on: tooltip, attrs }">
+              <v-btn
+                slot="activator"
+                color="info"
+                v-bind="attrs"
+                v-on="{ ...tooltip }"
+                @click="setLocation"
+              >
+                Set Location
+                <v-icon right>fa-location-dot</v-icon>
+              </v-btn>
+            </template>
+            <span>Set to your sub-district location</span>
+          </v-tooltip>
           <v-btn color="success" :disabled="isDisabled" @click="isEdit = false">
             Save Location
             <v-icon right>fa-save</v-icon>
@@ -136,9 +151,9 @@ export default {
       title: '',
       detail: '',
       file: null,
-      province: 'กรุงเทพมหานคร',
-      district: 'เขต บางรัก',
-      subDistrict: 'แขวง สีลม',
+      province: 'จ. ปทุมธานี',
+      district: 'อ. คลองหลวง',
+      subDistrict: 'ต. คลองหนึ่ง',
       // Command
       valid: true,
       isDisabled: false,
@@ -152,36 +167,47 @@ export default {
     }
   },
   computed: {
+    // Address
     provinceList() {
-      return this.listdata.map((record) => {
+      const list = this.listdata.map((record) => {
         const CHANGWAT = record.CHANGWAT_T
         return CHANGWAT
       })
+      return list.sort()
     },
     districtList() {
       if (this.province !== '') {
-        return this.listdata.map((record) => {
+        let list = this.listdata.map((record) => {
           const AMPHOE = record.AMPHOE_T
           if (record.CHANGWAT_T === this.province) return AMPHOE
           else return ''
         })
+        list = list.filter((element) => {
+          return element !== ''
+        })
+        return list.sort()
       } else {
         return []
       }
     },
     subDistrictList() {
       if (this.district !== '') {
-        return this.listdata.map((record) => {
+        let list = this.listdata.map((record) => {
           const TAMBON = record.TAMBON_T
           if (record.AMPHOE_T === this.district) return TAMBON
           else return ''
         })
+        list = list.filter((element) => {
+          return element !== ''
+        })
+        return list.sort()
       } else {
         return []
       }
     },
   },
   watch: {
+    // Address
     province() {
       if (this.province !== '') {
         this.districtList = this.listdata.map((record) => {
@@ -198,6 +224,16 @@ export default {
           if (record.AMPHOE_T === this.district) return TAMBON
           else return ''
         })
+      }
+    },
+    districtList() {
+      if (!this.districtList.includes(this.district)) {
+        this.district = ''
+      }
+    },
+    subDistrictList() {
+      if (!this.subDistrictList.includes(this.subDistrict)) {
+        this.subDistrict = ''
       }
     },
   },
@@ -220,6 +256,17 @@ export default {
     centerUpdate(center) {
       if (this.isEdit === true) {
         this.currentCenter = center
+      }
+    },
+    setLocation() {
+      if (this.subDistrict !== '') {
+        for (let i = 0; i < this.listdata.length; i++) {
+          if (this.listdata[i].TAMBON_T === this.subDistrict) {
+            this.center = [this.listdata[i].LAT, this.listdata[i].LONG]
+            this.currentCenter = [this.listdata[i].LAT, this.listdata[i].LONG]
+            break
+          }
+        }
       }
     },
   },

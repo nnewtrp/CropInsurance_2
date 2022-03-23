@@ -148,7 +148,7 @@
         <h2 class="pb-2">Location</h2>
         <div id="map-wrap" style="height: 50vh">
           <client-only>
-            <l-map :zoom="13" :center="center" @update:center="centerUpdate">
+            <l-map :zoom="16" :center="center" @update:center="centerUpdate">
               <l-tile-layer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               ></l-tile-layer>
@@ -158,6 +158,20 @@
             </l-map>
           </client-only>
         </div>
+        <v-card-actions v-if="isEdit == false">
+          <v-spacer />
+          <v-btn color="error" :disabled="isDisabled" @click="isEdit = true">
+            Edit Location
+            <v-icon right>fa-pencil-alt</v-icon>
+          </v-btn>
+        </v-card-actions>
+        <v-card-actions v-else>
+          <v-spacer />
+          <v-btn color="success" :disabled="isDisabled" @click="isEdit = false">
+            Save Location
+            <v-icon right>fa-save</v-icon>
+          </v-btn>
+        </v-card-actions>
       </v-card-text>
     </v-form>
     <v-card-actions class="justify-center">
@@ -207,9 +221,10 @@ export default {
           (value && value.length <= 10) ||
           'Phone number must be less that 10 numbers',
       },
+      isDisabled: false,
       Logo: false,
       cLogo: false,
-      step: 1,
+      step: 2,
       Valid1: true,
       Valid2: true,
       // Map
@@ -226,35 +241,45 @@ export default {
     },
     // Address
     provinceList() {
-      return this.listdata.map((record) => {
+      const list = this.listdata.map((record) => {
         const CHANGWAT = record.CHANGWAT_T
         return CHANGWAT
       })
+      return list.sort()
     },
     districtList() {
       if (this.province !== '') {
-        return this.listdata.map((record) => {
+        let list = this.listdata.map((record) => {
           const AMPHOE = record.AMPHOE_T
           if (record.CHANGWAT_T === this.province) return AMPHOE
           else return ''
         })
+        list = list.filter((element) => {
+          return element !== ''
+        })
+        return list.sort()
       } else {
         return []
       }
     },
     subDistrictList() {
       if (this.district !== '') {
-        return this.listdata.map((record) => {
+        let list = this.listdata.map((record) => {
           const TAMBON = record.TAMBON_T
           if (record.AMPHOE_T === this.district) return TAMBON
           else return ''
         })
+        list = list.filter((element) => {
+          return element !== ''
+        })
+        return list.sort()
       } else {
         return []
       }
     },
   },
   watch: {
+    // Address
     province() {
       if (this.province !== '') {
         this.districtList = this.listdata.map((record) => {
@@ -271,6 +296,27 @@ export default {
           if (record.AMPHOE_T === this.district) return TAMBON
           else return ''
         })
+      }
+    },
+    subDistrict() {
+      if (this.subDistrict !== '') {
+        for (let i = 0; i < this.listdata.length; i++) {
+          if (this.listdata[i].TAMBON_T === this.subDistrict) {
+            this.center = [this.listdata[i].LAT, this.listdata[i].LONG]
+            this.currentCenter = [this.listdata[i].LAT, this.listdata[i].LONG]
+            break
+          }
+        }
+      }
+    },
+    districtList() {
+      if (!this.districtList.includes(this.district)) {
+        this.district = ''
+      }
+    },
+    subDistrictList() {
+      if (!this.subDistrictList.includes(this.subDistrict)) {
+        this.subDistrict = ''
       }
     },
   },

@@ -194,6 +194,16 @@ export default {
         })
       }
     },
+    districtList() {
+      if (!this.districtList.includes(this.district)) {
+        this.district = ''
+      }
+    },
+    subDistrictList() {
+      if (!this.subDistrictList.includes(this.subDistrict)) {
+        this.subDistrict = ''
+      }
+    },
   },
   methods: {
     save() {

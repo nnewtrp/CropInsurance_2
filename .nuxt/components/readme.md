@@ -8,10 +8,10 @@ You can directly use them in pages and other components without the need to impo
 
 - `<AllReportCard>` | `<all-report-card>` (components/AllReportCard.vue)
 - `<WelcomeCard>` | `<welcome-card>` (components/WelcomeCard.vue)
-- `<FormReportForm>` | `<form-report-form>` (components/Form/ReportForm.vue)
 - `<AuthPicture>` | `<auth-picture>` (components/Auth/AuthPicture.vue)
 - `<AuthLoginForm>` | `<auth-login-form>` (components/Auth/LoginForm.vue)
 - `<AuthSignUpForm>` | `<auth-sign-up-form>` (components/Auth/SignUpForm.vue)
+- `<FormReportForm>` | `<form-report-form>` (components/Form/ReportForm.vue)
 - `<NavbarAvatarMenu>` | `<navbar-avatar-menu>` (components/navbar/AvatarMenu.vue)
 - `<NavbarStaffAvatarMenu>` | `<navbar-staff-avatar-menu>` (components/navbar/StaffAvatarMenu.vue)
 - `<ProfileChangePassword>` | `<profile-change-password>` (components/Profile/ChangePassword.vue)
