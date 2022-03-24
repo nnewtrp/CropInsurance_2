@@ -229,8 +229,8 @@ export default {
       Valid2: true,
       // Map
       isEdit: false,
-      center: [14.069556, 100.607857],
-      currentCenter: [14.069556, 100.607857],
+      center: [13.756248, 100.491819],
+      currentCenter: [13.756248, 100.491819],
     }
   },
   computed: {
