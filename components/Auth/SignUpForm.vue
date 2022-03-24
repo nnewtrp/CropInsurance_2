@@ -15,9 +15,9 @@
       <v-card-text>
         <h2 class="ml-1">User Information</h2>
         <v-radio-group
-          v-model="nametitle"
+          v-model="titlename"
           class="ml-1 mb-2"
-          label="Name Title *"
+          label="Title Name *"
           row
           :rules="[rules.required]"
           required
@@ -198,7 +198,7 @@ export default {
   data() {
     return {
       // Data
-      nametitle: '',
+      titlename: '',
       firstname: '',
       lastname: '',
       email: '',

@@ -8,8 +8,8 @@
       </v-card-title>
       <v-card-text class="subheading">
         <v-radio-group
-          v-model="nametitle"
-          label="Name Title *"
+          v-model="titlename"
+          label="Title Name *"
           row
           :rules="[rules.required]"
           required
@@ -120,7 +120,7 @@ export default {
     return {
       // User Data
       uid: '1',
-      nametitle: 'Mr.',
+      titlename: 'Mr.',
       firstname: 'Teerapat',
       lastname: 'Satitporn',
       province: 'กรุงเทพมหานคร',
