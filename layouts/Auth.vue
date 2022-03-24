@@ -57,7 +57,7 @@ export default {
   data() {
     return {
       title: 'Crop Insurance',
-      needReloading: ['Auth-signup'],
+      needReloading: [],
     }
   },
   watch: {

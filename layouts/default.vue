@@ -51,7 +51,7 @@ export default {
   data() {
     return {
       title: 'Crop Insurance',
-      needReloading: ['Form', 'Profile-editProfile'],
+      needReloading: [],
     }
   },
   watch: {

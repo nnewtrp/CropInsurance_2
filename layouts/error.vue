@@ -27,12 +27,7 @@ export default {
       pageNotFound: '404 Not Found',
       otherError: 'An error occurred',
       waiting: 'Waiting for page reloading...',
-      needReloading: [
-        'Form',
-        'Profile-editProfile',
-        'Staff-Profile-editProfile',
-        'Auth-signup',
-      ],
+      needReloading: [],
     }
   },
   head() {

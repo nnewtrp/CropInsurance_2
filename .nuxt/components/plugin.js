@@ -4,10 +4,10 @@ import { wrapFunctional } from './utils'
 const components = {
   AllReportCard: () => import('../..\\components\\AllReportCard.vue' /* webpackChunkName: "components/all-report-card" */).then(c => wrapFunctional(c.default || c)),
   WelcomeCard: () => import('../..\\components\\WelcomeCard.vue' /* webpackChunkName: "components/welcome-card" */).then(c => wrapFunctional(c.default || c)),
+  FormReportForm: () => import('../..\\components\\Form\\ReportForm.vue' /* webpackChunkName: "components/form-report-form" */).then(c => wrapFunctional(c.default || c)),
   AuthPicture: () => import('../..\\components\\Auth\\AuthPicture.vue' /* webpackChunkName: "components/auth-picture" */).then(c => wrapFunctional(c.default || c)),
   AuthLoginForm: () => import('../..\\components\\Auth\\LoginForm.vue' /* webpackChunkName: "components/auth-login-form" */).then(c => wrapFunctional(c.default || c)),
   AuthSignUpForm: () => import('../..\\components\\Auth\\SignUpForm.vue' /* webpackChunkName: "components/auth-sign-up-form" */).then(c => wrapFunctional(c.default || c)),
-  FormReportForm: () => import('../..\\components\\Form\\ReportForm.vue' /* webpackChunkName: "components/form-report-form" */).then(c => wrapFunctional(c.default || c)),
   NavbarAvatarMenu: () => import('../..\\components\\navbar\\AvatarMenu.vue' /* webpackChunkName: "components/navbar-avatar-menu" */).then(c => wrapFunctional(c.default || c)),
   NavbarStaffAvatarMenu: () => import('../..\\components\\navbar\\StaffAvatarMenu.vue' /* webpackChunkName: "components/navbar-staff-avatar-menu" */).then(c => wrapFunctional(c.default || c)),
   ProfileChangePassword: () => import('../..\\components\\Profile\\ChangePassword.vue' /* webpackChunkName: "components/profile-change-password" */).then(c => wrapFunctional(c.default || c)),

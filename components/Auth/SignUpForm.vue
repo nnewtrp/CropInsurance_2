@@ -224,7 +224,7 @@ export default {
       isDisabled: false,
       Logo: false,
       cLogo: false,
-      step: 2,
+      step: 1,
       Valid1: true,
       Valid2: true,
       // Map
