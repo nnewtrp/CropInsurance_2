@@ -18,7 +18,8 @@
         </v-card-title>
         <v-card-text class="subheading">
           <div class="text--primary pb-4">
-            <strong>Name:</strong> &ensp;{{ firstname }} {{ lastname }}
+            <strong>Name:</strong> &ensp;{{ titlename }} {{ firstname }}
+            {{ lastname }}
           </div>
           <div class="text--primary pb-4">
             <strong>Address:</strong> &ensp;{{ address }}
@@ -54,9 +55,11 @@ export default {
   data() {
     return {
       uid: '1',
+      titlename: 'Mr.',
       firstname: 'Teerapat',
       lastname: 'Satitporn',
-      address: 'Khlong Luang District, Pathumtani',
+      address:
+        '99 Moo 18, Km. 41 on Paholyothin Highway Khlong Luang, Pathum Thani 12120, Thailand',
       email: 'example@gmail.com',
       phone: '0802534473',
     }

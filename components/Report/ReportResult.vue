@@ -68,14 +68,14 @@ export default {
         {
           id: 1,
           status: 'Complete',
-          receiver: 'Chayanon Noisapung',
+          receiver: 'Mr. Chayanon Noisapung',
           result: '5000 THB',
           cdialog: false,
         },
         {
           id: 2,
           status: 'In Progress',
-          receiver: 'Chayanon Noisapung',
+          receiver: 'Mr. Chayanon Noisapung',
           result: '',
           cdialog: false,
         },

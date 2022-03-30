@@ -147,7 +147,7 @@
         ></v-autocomplete>
         <v-textarea
           v-model="moreAddress"
-          label="House number, Village, Soi, Road *"
+          label="House number, Village, Soi, Road, etc. *"
           outlined
           :rules="[rules.required]"
           required

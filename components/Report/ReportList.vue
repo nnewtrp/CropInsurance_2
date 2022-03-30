@@ -131,28 +131,28 @@ export default {
       reports: [
         {
           id: 1,
-          title: 'Flood',
+          title: 'Lorem ipsum dolor sit amet',
           date: '12-01-2022',
           status: 'Complete',
           cdialog: false,
         },
         {
           id: 2,
-          title: 'Flood',
+          title: 'Lorem ipsum dolor sit amet',
           date: '13-01-2022',
           status: 'In Progress',
           cdialog: false,
         },
         {
           id: 3,
-          title: 'Flood',
+          title: 'Lorem ipsum dolor sit amet',
           date: '14-01-2022',
           status: 'New Case',
           cdialog: false,
         },
         {
           id: 4,
-          title: 'Flood in my farm and it cause my work and it cause my work',
+          title: 'Lorem ipsum dolor sit amet, consectetur',
           date: '14-01-2022',
           status: 'New Case',
           cdialog: false,

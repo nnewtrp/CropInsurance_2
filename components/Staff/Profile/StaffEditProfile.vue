@@ -53,6 +53,14 @@
           :rules="[rules.required]"
           required
         ></v-autocomplete>
+        <v-textarea
+          v-model="address"
+          label="Workplace Address *"
+          outlined
+          :rules="[rules.required]"
+          readonly
+          required
+        ></v-textarea>
       </v-card-text>
       <v-card-title class="headline">
         <v-icon color="black">fa-address-card</v-icon>
@@ -101,11 +109,28 @@ export default {
       titlename: 'Mr.',
       firstname: 'Chayanon',
       lastname: 'Noisapung',
-      workplace: 'Head Office',
+      workplace: 'Ministry of Agriculture and Cooperatives',
+      address:
+        '3 Ratchadamnoen Nok Road, Ban Phan Thom Sub-district, Phra Nakhon District, Bangkok',
       email: 'example@gmail.com',
       phone: '0802534473',
       // Command
-      workplaceList: ['Head Office', 'Branch 1', 'Branch 2', 'Branch 3'],
+      workplaceList: [
+        'Ministry of Agriculture and Cooperatives',
+        'Branch 1',
+        'Branch 2',
+        'Branch 3',
+      ],
+      addressList: [
+        {
+          workplace: 'Ministry of Agriculture and Cooperatives',
+          address:
+            '3 Ratchadamnoen Nok Road, Ban Phan Thom Sub-district, Phra Nakhon District, Bangkok',
+        },
+        { workplace: 'Branch 1', address: 'No data' },
+        { workplace: 'Branch 2', address: 'No data' },
+        { workplace: 'Branch 3', address: 'No data' },
+      ],
       valid: true,
       rules: {
         required: (value) => !!value || 'This field is required.',
@@ -116,11 +141,18 @@ export default {
         phoneLength: (value) =>
           (value && value.length <= 10) ||
           'Phone number must be less that 10 numbers',
-        usernameLength: (value) =>
-          (value && value.length <= 25) ||
-          'Username must be less that 25 characters',
       },
     }
+  },
+  watch: {
+    workplace() {
+      for (let i = 0; i < this.addressList.length; i++) {
+        if (this.workplace === this.addressList[i].workplace) {
+          this.address = this.addressList[i].address
+          break
+        }
+      }
+    },
   },
   methods: {
     save() {

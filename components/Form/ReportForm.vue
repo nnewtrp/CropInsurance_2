@@ -22,7 +22,8 @@
           v-model="title"
           label="Title *"
           outlined
-          :rules="[rules.required]"
+          :rules="[rules.required, rules.titleLength]"
+          :counter="40"
           required
         ></v-text-field>
         <v-textarea
@@ -78,7 +79,7 @@
         ></v-autocomplete>
         <v-textarea
           v-model="moreAddress"
-          label="House number, Village, Soi, Road *"
+          label="House number, Village, Soi, Road, etc. *"
           outlined
           :rules="[rules.required]"
           required
@@ -169,6 +170,9 @@ export default {
       isDisabled: false,
       rules: {
         required: (value) => !!value || 'This field is required.',
+        titleLength: (value) =>
+          (value && value.length <= 40) ||
+          'Report title must be less that 40 characters',
       },
       // Map
       isEdit: false,

@@ -18,10 +18,14 @@
         </v-card-title>
         <v-card-text class="subheading">
           <div class="text--primary pb-4">
-            <strong>Name:</strong> &ensp;{{ firstname }} {{ lastname }}
+            <strong>Name:</strong> &ensp;{{ titlename }} {{ firstname }}
+            {{ lastname }}
           </div>
           <div class="text--primary pb-4">
             <strong>Workplace:</strong> &ensp;{{ workplace }}
+          </div>
+          <div class="text--primary pb-4">
+            <strong>Workplace Address:</strong> &ensp;{{ address }}
           </div>
         </v-card-text>
         <v-card-title class="headline">
@@ -41,7 +45,7 @@
       </v-col>
     </v-layout>
     <v-card-actions class="justify-center">
-      <v-btn color="error" href="/Profile/editProfile">
+      <v-btn color="error" href="/Staff/Profile/editProfile">
         Edit Profile
         <v-icon right>fa-user-edit</v-icon>
       </v-btn>
@@ -54,9 +58,12 @@ export default {
   data() {
     return {
       uid: '2',
+      titlename: 'Mr.',
       firstname: 'Chayanon',
       lastname: 'Noisapung',
-      workplace: 'Head Office',
+      workplace: 'Ministry of Agriculture and Cooperatives',
+      address:
+        '3 Ratchadamnoen Nok Road, Ban Phan Thom Sub-district, Phra Nakhon District, Bangkok',
       email: 'example@gmail.com',
       phone: '0802534473',
     }
