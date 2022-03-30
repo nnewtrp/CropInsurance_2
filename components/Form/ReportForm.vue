@@ -37,8 +37,10 @@
           chips
           multiple
           outlined
-          label="Import Image/File (Optional)"
+          label="Import Image/File *"
           prepend-icon="fa-paperclip"
+          :rules="[rules.required]"
+          required
         ></v-file-input>
         <h2 class="pb-4">Address</h2>
         <v-autocomplete
@@ -74,6 +76,13 @@
           :rules="[rules.required]"
           required
         ></v-autocomplete>
+        <v-textarea
+          v-model="moreAddress"
+          label="House number, Village, Soi, Road *"
+          outlined
+          :rules="[rules.required]"
+          required
+        ></v-textarea>
         <h2 class="pb-2">Location</h2>
         <div id="map-wrap" style="height: 50vh">
           <client-only>
@@ -154,6 +163,7 @@ export default {
       province: 'จ. ปทุมธานี',
       district: 'อ. คลองหลวง',
       subDistrict: 'ต. คลองหนึ่ง',
+      moreAddress: '99 Moo 18, Km. 41 on Paholyothin Highway',
       // Command
       valid: true,
       isDisabled: false,

@@ -75,6 +75,40 @@
           :rules="[rules.required]"
           required
         ></v-autocomplete>
+        <v-textarea
+          v-model="moreAddress"
+          label="House number, Village, Soi, Road *"
+          outlined
+          :rules="[rules.required]"
+          required
+        ></v-textarea>
+        <h2 class="pb-2">Location</h2>
+        <div id="map-wrap" style="height: 50vh">
+          <client-only>
+            <l-map :zoom="16" :center="center" @update:center="centerUpdate">
+              <l-tile-layer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              ></l-tile-layer>
+              <l-marker :lat-lng="currentCenter">
+                <l-popup> Marker at {{ currentCenter }}</l-popup>
+              </l-marker>
+            </l-map>
+          </client-only>
+        </div>
+        <v-card-actions v-if="isEdit == false">
+          <v-spacer />
+          <v-btn color="error" @click="isEdit = true">
+            Edit Location
+            <v-icon right>fa-pencil-alt</v-icon>
+          </v-btn>
+        </v-card-actions>
+        <v-card-actions v-else>
+          <v-spacer />
+          <v-btn color="success" @click="isEdit = false">
+            Save Location
+            <v-icon right>fa-save</v-icon>
+          </v-btn>
+        </v-card-actions>
       </v-card-text>
       <v-card-title class="headline">
         <v-icon color="black">fa-address-card</v-icon>
@@ -123,9 +157,10 @@ export default {
       titlename: 'Mr.',
       firstname: 'Teerapat',
       lastname: 'Satitporn',
-      province: 'กรุงเทพมหานคร',
-      district: 'เขต บางรัก',
-      subDistrict: 'แขวง สีลม',
+      province: 'จ. ปทุมธานี',
+      district: 'อ. คลองหลวง',
+      subDistrict: 'ต. คลองหนึ่ง',
+      moreAddress: '99 Moo 18, Km. 41 on Paholyothin Highway',
       email: 'example@gmail.com',
       phone: '0802534473',
       // Command
@@ -143,39 +178,54 @@ export default {
           (value && value.length <= 25) ||
           'Username must be less that 25 characters',
       },
+      // Map
+      isEdit: false,
+      center: [14.069556, 100.607857],
+      currentCenter: [14.069556, 100.607857],
     }
   },
   computed: {
+    // Address
     provinceList() {
-      return this.listdata.map((record) => {
+      const list = this.listdata.map((record) => {
         const CHANGWAT = record.CHANGWAT_T
         return CHANGWAT
       })
+      return list.sort()
     },
     districtList() {
       if (this.province !== '') {
-        return this.listdata.map((record) => {
+        let list = this.listdata.map((record) => {
           const AMPHOE = record.AMPHOE_T
           if (record.CHANGWAT_T === this.province) return AMPHOE
           else return ''
         })
+        list = list.filter((element) => {
+          return element !== ''
+        })
+        return list.sort()
       } else {
         return []
       }
     },
     subDistrictList() {
       if (this.district !== '') {
-        return this.listdata.map((record) => {
+        let list = this.listdata.map((record) => {
           const TAMBON = record.TAMBON_T
           if (record.AMPHOE_T === this.district) return TAMBON
           else return ''
         })
+        list = list.filter((element) => {
+          return element !== ''
+        })
+        return list.sort()
       } else {
         return []
       }
     },
   },
   watch: {
+    // Address
     province() {
       if (this.province !== '') {
         this.districtList = this.listdata.map((record) => {
@@ -194,6 +244,17 @@ export default {
         })
       }
     },
+    subDistrict() {
+      if (this.subDistrict !== '') {
+        for (let i = 0; i < this.listdata.length; i++) {
+          if (this.listdata[i].TAMBON_T === this.subDistrict) {
+            this.center = [this.listdata[i].LAT, this.listdata[i].LONG]
+            this.currentCenter = [this.listdata[i].LAT, this.listdata[i].LONG]
+            break
+          }
+        }
+      }
+    },
     districtList() {
       if (!this.districtList.includes(this.district)) {
         this.district = ''
@@ -209,6 +270,12 @@ export default {
     save() {
       if (this.$refs.form.validate()) {
         this.$router.push({ path: '/profile' })
+      }
+    },
+    // Map
+    centerUpdate(center) {
+      if (this.isEdit === true) {
+        this.currentCenter = center
       }
     },
   },

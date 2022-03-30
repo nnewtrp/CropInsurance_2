@@ -145,6 +145,13 @@
           :rules="[rules.required]"
           required
         ></v-autocomplete>
+        <v-textarea
+          v-model="moreAddress"
+          label="House number, Village, Soi, Road *"
+          outlined
+          :rules="[rules.required]"
+          required
+        ></v-textarea>
         <h2 class="pb-2">Location</h2>
         <div id="map-wrap" style="height: 50vh">
           <client-only>
@@ -160,14 +167,14 @@
         </div>
         <v-card-actions v-if="isEdit == false">
           <v-spacer />
-          <v-btn color="error" :disabled="isDisabled" @click="isEdit = true">
+          <v-btn color="error" @click="isEdit = true">
             Edit Location
             <v-icon right>fa-pencil-alt</v-icon>
           </v-btn>
         </v-card-actions>
         <v-card-actions v-else>
           <v-spacer />
-          <v-btn color="success" :disabled="isDisabled" @click="isEdit = false">
+          <v-btn color="success" @click="isEdit = false">
             Save Location
             <v-icon right>fa-save</v-icon>
           </v-btn>
@@ -208,6 +215,7 @@ export default {
       province: '',
       district: '',
       subDistrict: '',
+      moreAddress: '',
       // Command
       rules: {
         required: (value) => !!value || 'This field is required.',
@@ -221,7 +229,6 @@ export default {
           (value && value.length <= 10) ||
           'Phone number must be less that 10 numbers',
       },
-      isDisabled: false,
       Logo: false,
       cLogo: false,
       step: 1,
