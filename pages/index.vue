@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center" class="py-16">
-    <WelcomeCard sm="4" md="4" />
-    <AllReportCard sm="8" md="8" />
+    <WelcomeCard sm="12" md="4" />
+    <AllReportCard sm="12" md="8" />
   </v-row>
 </template>
 
