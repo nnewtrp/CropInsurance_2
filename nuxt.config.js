@@ -41,6 +41,13 @@ export default {
     '@nuxtjs/dotenv',
   ],
 
+  serverMiddleware: [
+    {
+      path: '/api',
+      handler: '~/api/index.js'
+    }
+  ],
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
