@@ -200,7 +200,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {"DataGov_API_KEY":"bVLICRUmOpFzTu4m5V4cmKT0i77u79wC","DATABASE_URL":"postgres://wncbykctgqvdez:a757e0c1aaf2c357a396d7d1b0763e4aecd5371ad522a860c8ff7d1c3c963256@localhost:3000/dctc32c7g6sg52"}
+      env: {"baseUrl":"localhost","DataGov_API_KEY":"bVLICRUmOpFzTu4m5V4cmKT0i77u79wC","DATABASE_URL":"postgres://wncbykctgqvdez:a757e0c1aaf2c357a396d7d1b0763e4aecd5371ad522a860c8ff7d1c3c963256@localhost:3000/dctc32c7g6sg52"}
     }
     // Only set once
 
