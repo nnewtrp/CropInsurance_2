@@ -26,7 +26,7 @@ UserInfo.init({
   }
 }, {
   sequelize,
-  modelName: 'UserInfo',
+  modelName: 'User',
   tableName: 'UserInfo',
   indexes: [{ unique: true, fields: ['UserInfoID'] }],
 })
