@@ -1,15 +1,15 @@
-import User from '../models/User'
+import UserInfo from '../models/UserInfo'
 
 module.exports = {
   index: async (req, res) => {
     let response = {
       error: false,
       message: 'Success',
-      User: []
+      UserInfo: []
     }
 
     try {
-      response.User = await User.findAll()
+      response.UserInfo = await UserInfo.findAll()
     } catch (err) {
       response.error = true
       response.message = err.message
