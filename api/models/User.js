@@ -5,7 +5,7 @@ class User extends Model {}
 User.init({
   UserID: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true, allowNull: false },
   Email: { type: DataTypes.STRING, allowNull: false, unique: true },
-  Password: { type: DataTypes.STRING, allowNull: false },
+  Password: { type: DataTypes.TEXT, allowNull: false },
   UserGroupID: { type: DataTypes.INTEGER, allowNull: false },
   isActive: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false },
 }, {

@@ -23,6 +23,15 @@ UserInfo.init({
     set (value) {
       throw new Error('Do not try to set the `fullName` value!')
     }
+  },
+  fullAddress: {
+    type: DataTypes.VIRTUAL,
+    get () {
+      return `${this.MoreAddress}, ${this.SubDistrict}, ${this.District}, ${this.Province}`
+    },
+    set (value) {
+      throw new Error('Do not try to set the `fullAddress` value!')
+    }
   }
 }, {
   sequelize,
