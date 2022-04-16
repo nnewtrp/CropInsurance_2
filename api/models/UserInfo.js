@@ -31,4 +31,4 @@ UserInfo.init({
   indexes: [{ unique: true, fields: ['UserInfoID'] }],
 })
 
-export default User
+export default UserInfo
